@@ -1,0 +1,29 @@
+.slider-container{
+    width: 400px;
+    border: solid 1px white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -5px gray;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+.slider-modal{
+    width: 400px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.slide-container{
+    width: 400px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    
+}
+

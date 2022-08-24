@@ -1,0 +1,67 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    background-image: url("https://images.pexels.com/photos/331684/pexels-photo-331684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.form-container .form{
+    width: 20vw;
+    height: 50vh;
+    background-image: linear-gradient(to bottom, #1a1a1a , #333333);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-container .form .form-title{
+    color: white;
+}
+
+.form-container .form input{
+    width: 70%;
+    height: 35px;
+    border: solid 2px #666666;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    
+}
+
+.form-container .form input:focus{
+    background-color: #333333;
+    border: solid 2px black;
+    outline: none;
+}
+
+.form-container .form .form-btn{
+    width: 50%;
+    height: 30px;
+    border: solid black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+}
+
+@media only screen and (min-width: 414px) and (max-width: 767px),
+  (min-width: 412px) and (max-width: 767px),
+  (min-width: 390px) and (max-width: 767px),
+  (min-width: 428px) and (max-width: 767px),
+  (min-width: 384px) and (max-width: 767px),
+  (min-width: 360px) and (max-width: 767px) {
+    .form-container .form{
+        width: 80%;
+        height: 70%;
+    }
+  }

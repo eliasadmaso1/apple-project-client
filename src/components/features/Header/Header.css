@@ -1,0 +1,32 @@
+.header-container{
+    height: 8vh;
+    background-color:#333333;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    align-content: center;
+}
+
+.link{
+    color:white;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+
+@media only screen and (min-width: 414px) and (max-width: 767px),
+(min-width: 412px) and (max-width: 767px),
+(min-width: 390px) and (max-width: 767px),
+(min-width: 428px) and (max-width: 767px),
+(min-width: 384px) and (max-width: 767px),
+(min-width: 360px) and (max-width: 767px) {
+    .link{
+        font-size: 10px;
+    }
+   
+}
+
