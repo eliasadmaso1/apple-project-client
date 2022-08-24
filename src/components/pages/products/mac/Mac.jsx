@@ -8,7 +8,7 @@ import img3 from "../../../images/mac1.png";
 import img4 from "../../../images/mac2.png";
 import img5 from "../../../images/mac3.png";
 import img6 from "../../../images/mac4.png";
-import img7 from "../../../images/mac5.png";
+import img7 from "../../../images/mac.png";
 
 const Mac = () => {
   const sliderData = [
@@ -34,12 +34,12 @@ const Mac = () => {
       <div className="mac-page">
         <header>
           <h1 className="header-title">MacBook</h1>
-          <img
+          {/* <img
             src="https://www.apple.com/v/macbook-pro-13/m/images/overview/magic_keyboard__brx9diaauwaa_large_2x.jpg"
             width="200px"
-          />
+          /> */}
         </header>
-        <img src={img3} alt="" className="img" />
+        <img src={img7} alt="" className="img" />
         <img src={img4} alt="" className="img" />
 
         <ContentSlider slides={sliderData} />
@@ -57,9 +57,8 @@ const Mac = () => {
             );
           })}
         </div>
-        <img src={img7} alt="" className="img" />
-
         <img src={img5} alt="" className="img" />
+
       </div>
     </>
   );

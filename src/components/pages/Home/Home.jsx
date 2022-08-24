@@ -14,6 +14,7 @@ import img10 from '../../images/iPad2.png';
 import img11 from '../../images/airPodsPro.png';
 import img12 from '../../images/airPodsMax.png';
 import img13 from '../../images/airPods2.png';
+import ContentSlider from '../../features/contentSlider/ContentSlider';
 
 
 
@@ -21,22 +22,59 @@ import img13 from '../../images/airPods2.png';
 
 
 const Home = () => {
+    const sliderData = [
+        {
+          text: "iPhons",
+        },
+        {
+          text: "MacBooks",
+        },
+        {
+          text: "iPads",
+        },
+        {
+          text: "airPods",
+        },
+        {
+          text: "Best Products",
+        },
+      ];
     return (
         <div className="home-container">
+            <ContentSlider slides={sliderData}/>
+            <div className="home-section">
+            <h1 className="home-section-title">iPhons</h1>
             <img src={img} alt="" className="img" />
             <img src={img1} alt="" className="img"/>
-            <img src={img2} alt="" className="img"/>
-            <img src={img3} alt="" className="img"/>
-            <img src={img4} alt="" className="img"/>
+            </div>
+           
+          <div className="home-section">
+          <h1 className="home-section-title">MacBooks</h1>
+
+          <img src={img4} alt="" className="img"/>
+          <img src={img7} alt="" className="img"/>
+
             <img src={img5} alt="" className="img"/>
-            <img src={img6} alt="" className="img"/>
-            <img src={img7} alt="" className="img"/>
-            <img src={img8} alt="" className="img"/>
+          </div>
+
+          <div className="home-section">
+          <h1 className="home-section-title">iPads</h1>
+          <img src={img8} alt="" className="img"/>
             <img src={img9} alt="" className="img"/>
             <img src={img10} alt="" className="img"/>
-            <img src={img11} alt="" className="img"/>
+        
+          </div>
+
+          <div className="home-section">
+          <h1 className="home-section-title">AirPods</h1>
+ 
+          <img src={img11} alt="" className="img"/>
             <img src={img12} alt="" className="img"/>
             <img src={img13} alt="" className="img"/>
+         
+          </div>
+        
+         
 
 
 
