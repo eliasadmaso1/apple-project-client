@@ -13,19 +13,19 @@ import img7 from "../../../images/mac.png";
 const Mac = () => {
   const sliderData = [
     {
-      text: "MacBook Air with M1 chip",
+      text: "MacBook Air with M1 Chip",
     },
     {
-      text: "MacBook Air with M2 chip",
+      text: "MacBook Air with M2 Chip",
     },
     {
-      text: "MacBook Pro 13 inch",
+      text: "MacBook Pro 13 Inch",
     },
     {
-      text: "MacBook Pro 14 inch",
+      text: "MacBook Pro 14 Inch",
     },
     {
-      text: "MacBook Pro 16 inch",
+      text: "MacBook Pro 16 Inch",
     },
   ];
 
