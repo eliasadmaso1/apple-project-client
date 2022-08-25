@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color:rgba(249, 249, 249, 0.205);
 
 }
@@ -21,4 +22,17 @@
     margin-top: 50px;
 
 
+}
+
+.section-btn{
+    width: 12%;
+    height: 40px;
+    border: solid black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.section-btn:hover{
+    opacity: 0.5;
 }

@@ -6,7 +6,7 @@ import img2 from '../../images/mac.png';
 import img3 from '../../images/mac1.png';
 import img4 from '../../images/mac2.png';
 import img5 from '../../images/mac3.png';
-import img6 from '../../images/mac4.png';
+import img6 from '../../images/macBack.png';
 import img7 from '../../images/mac5.png';
 import img8 from '../../images/iPad.png';
 import img9 from '../../images/iPad1.png';
@@ -52,9 +52,10 @@ const Home = () => {
           <h1 className="home-section-title">MacBooks</h1>
 
           <img src={img4} alt="" className="img"/>
-          <img src={img7} alt="" className="img"/>
+          <img src={img5} alt="" className="img"/>
+          <img src={img6} className="img"/>
+          <button className="section-btn">Shop</button>
 
-            <img src={img5} alt="" className="img"/>
           </div>
 
           <div className="home-section">
