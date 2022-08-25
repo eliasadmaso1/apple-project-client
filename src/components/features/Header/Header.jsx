@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <div className="header-container">
             <span className="link"><AppleIcon style={{fontSize:"20px"}}/></span>
-            <Link to="/" className="link">Home</Link>
+            <Link to="/apple-project-client" className="link">Home</Link>
             <Link to="/mac" className="link">Mac</Link>
             <span className="link">iPhon</span>
             <span className="link">iPad</span>
