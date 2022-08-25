@@ -27,7 +27,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/apple-project-client" element={<Home/>} />
         <Route path="/mac" element={<Mac />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
