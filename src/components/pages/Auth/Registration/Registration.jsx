@@ -1,7 +1,9 @@
 import React from 'react';
+import { deleteUser, getAllUsers, updateUser } from '../../../service/users';
 import '../auth.css';
 
 const Registration = () => {
+
     return (
         <div className="form-container">
             <form className="form">
@@ -10,7 +12,11 @@ const Registration = () => {
                 <input placeholder="Last Name"/>
                 <input placeholder="Email"/>
                 <input placeholder="Password"/>
-                <button className="form-btn">Submit</button>
+                <button className="form-btn" onClick={async(e)=>{
+                    e.preventDefault();
+                    await updateUser("630780861dffe574b6b5f320",{firstName:"eli"})
+
+                }}>Submit</button>
 
             </form>
             

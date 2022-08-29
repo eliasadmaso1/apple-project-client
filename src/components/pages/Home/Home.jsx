@@ -1,87 +1,104 @@
-import React from 'react';
-import './Home.css';
-import img from '../../images/iphone.png';
-import img1 from '../../images/iphone1.png';
-import img2 from '../../images/mac.png';
-import img3 from '../../images/mac1.png';
-import img4 from '../../images/mac2.png';
-import img5 from '../../images/mac3.png';
-import img6 from '../../images/macBack.png';
-import img7 from '../../images/mac5.png';
-import img8 from '../../images/iPad.png';
-import img9 from '../../images/iPad1.png';
-import img10 from '../../images/iPad2.png';
-import img11 from '../../images/airPodsPro.png';
-import img12 from '../../images/airPodsMax.png';
-import img13 from '../../images/airPods2.png';
-import ContentSlider from '../../features/contentSlider/ContentSlider';
-
-
-
-
-
+import React from "react";
+import "./Home.css";
+import iPhone from "../../images/iphone.png";
+import macBooks from "../../images/macBooks.png";
+import iPhones from "../../images/iPhones.png";
+import iPads from "../../images/iPads.png";
+import img4 from "../../images/mac2.png";
+import mac from "../../images/mac3.png";
+import img6 from "../../images/macBack.png";
+import img7 from "../../images/mac5.png";
+import iPad from "../../images/iPad.png";
+import img9 from "../../images/iPad1.png";
+import img10 from "../../images/iPad2.png";
+import airPods from "../../images/airPods.png";
+import airPodsMax from "../../images/airPodsMax.png";
+import airPods2 from "../../images/airPods2.png";
+import ContentSlider from "../../features/contentSlider/ContentSlider";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    const sliderData = [
-        {
-          text: "iPhons",
-        },
-        {
-          text: "MacBooks",
-        },
-        {
-          text: "iPads",
-        },
-        {
-          text: "airPods",
-        },
-        {
-          text: "Best Products",
-        },
-      ];
-    return (
-        <div className="home-container">
-            <ContentSlider slides={sliderData}/>
-            <div className="home-section">
-            <h1 className="home-section-title">iPhons</h1>
-            <img src={img} alt="" className="img" />
-            <img src={img1} alt="" className="img"/>
-            </div>
-           
-          <div className="home-section">
-          <h1 className="home-section-title">MacBooks</h1>
-
-          <img src={img4} alt="" className="img"/>
-          <img src={img5} alt="" className="img"/>
-          <img src={img6} className="img"/>
-          <button className="section-btn">Shop</button>
-
-          </div>
-
-          <div className="home-section">
-          <h1 className="home-section-title">iPads</h1>
-          <img src={img8} alt="" className="img"/>
-            <img src={img9} alt="" className="img"/>
-            <img src={img10} alt="" className="img"/>
-        
-          </div>
-
-          <div className="home-section">
-          <h1 className="home-section-title">AirPods</h1>
- 
-          <img src={img11} alt="" className="img"/>
-            <img src={img12} alt="" className="img"/>
-            <img src={img13} alt="" className="img"/>
-         
-          </div>
-        
-         
-
-
-
-            
+  const sliderData = [
+    {
+      text: "iPhons",
+    },
+    {
+      text: "MacBooks",
+    },
+    {
+      text: "iPads",
+    },
+    {
+      text: "airPods",
+    },
+    {
+      text: "Best Products",
+    },
+  ];
+  return (
+    <div className="home-container">
+      <header>
+        <ContentSlider slides={sliderData} />
+      </header>
+      <div className="home-section">
+        <h1 className="home-section-title">iPhons</h1>
+        <img src={iPhone} alt="" className="img" />
+        <div className="shop-link">
+          <h1>Choose Your iPhones</h1>
+          <img src={iPhones} alt=""  className="img" />
+          <button className="section-btn">
+            <Link to="/" className="link">
+              Shop
+            </Link>
+          </button>
         </div>
-    )
-}
+      </div>
 
-export default Home
+      <div className="home-section">
+        <h1 className="home-section-title">MacBooks</h1>
+        <img src={mac} alt="" className="img" />
+        <div className="shop-link">
+          <h1>Choose Your MacBook</h1>
+          <img src={macBooks} alt=""  className="img" />
+          <button className="section-btn">
+            <Link to="/" className="link">
+              Shop
+            </Link>
+          </button>
+        </div>
+      </div>
+
+      <div className="home-section">
+        <h1 className="home-section-title">iPads</h1>
+        <img src={iPad} alt="" className="img" />
+        <div className="shop-link">
+          <h1>Choose Your iPads</h1>
+          <img src={iPads} alt=""  className="img" />
+          <button className="section-btn">
+            <Link to="/" className="link">
+              Shop
+            </Link>
+          </button>
+        </div>
+      </div>
+
+      <div className="home-section">
+        <h1 className="home-section-title">AirPods</h1>
+
+        <img src={airPodsMax} alt="" className="img" />
+        <div className="shop-link">
+          <h1>Choose Your airPods</h1>
+          <img src={airPods} alt=""  className="img" />
+          <button className="section-btn">
+            <Link to="/" className="link">
+              Shop
+            </Link>
+          </button>
+        </div>
+        <img src={airPods2} alt="" className="img" />
+      </div>
+    </div>
+  );
+};
+
+export default Home;

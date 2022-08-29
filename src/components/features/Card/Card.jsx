@@ -3,11 +3,10 @@ import "./Card.css";
 import { Link} from 'react-router-dom';
 
 
-const Card = ({ img, title, subTitle, price }) => {
+const Card = ({ img, title, price }) => {
   return (
     <div className="card-container">
       <h3 className="card-title">{title}</h3>
-      <h4 className="card-title">{subTitle}</h4>
       <img className="card-img" src={img} />
       <div className="sub-container">
         <span>{price}$</span>

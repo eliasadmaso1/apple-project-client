@@ -13,6 +13,7 @@ const Header = () => {
             <span className="link">iPhon</span>
             <span className="link">iPad</span>
             <span className="link">AirPods</span>
+
             <Link to="/registration" className="link"><PersonIcon style={{fontSize:"20px"}}/></Link>
 
 

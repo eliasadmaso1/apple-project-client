@@ -1,1 +1,0 @@
-export const getServerBaseUrl = () => 'http://localhost:5000'
