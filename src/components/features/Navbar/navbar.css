@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root{
+    --mainColor:#333333;
+    --txtColor:#eee;
+    --secondaryColor:#1D1D1F;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 2rem;
+    background-color: var(--mainColor);
+    color: var(--txtColor);
+}
+
+nav a{
+    margin: 0 2rem;
+    color: var(--txtColor);
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: var(--secondaryColor);
+
+}
+
+header .nav-btn{
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--txtColor);
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media only screen and (min-width: 414px) and (max-width: 767px),
+(min-width: 412px) and (max-width: 767px),
+(min-width: 390px) and (max-width: 767px),
+(min-width: 428px) and (max-width: 767px),
+(min-width: 384px) and (max-width: 767px),
+(min-width: 360px) and (max-width: 767px) {
+    header .nav-btn{
+        visibility: visible;
+        opacity: 1;
+    }
+    header nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        background: var(--mainColor);
+        transition: 1s;
+        transform: translateY(-100vh);
+        padding-top: 100px;
+    }
+
+    header .responsive-navbar{
+        transform: none;
+
+    }
+    nav .nav-close-btn{
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    nav a{
+        font-size: 1.5rem;
+        border-bottom: solid 0.5px white;
+        font-weight: bold;
+        width: 50%;
+        transition: 1s;
+    }
+    nav a:hover{
+        background: white;
+    }
+
+
+}
+
