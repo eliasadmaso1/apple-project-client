@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { macBookData } from "../../../data";
 import Card from "../../../features/Card/Card";
 import "../products.css";
-import ContentSlider from "../../../features/contentSlider/ContentSlider";
 import mac from "../../../images/mac.png";
-import { getAllMacs } from "../../../service/products";
+import { getAllProducts } from "../../../service/products";
 
 const Mac = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const displayProducts = async () => {
-      await getAllMacs().then((res) => setProducts(res));
+      const macs = await getAllProducts().then((res) => res.filter(item => item.category === "MacBook"));
+      setProducts(macs);
     };
     displayProducts();
   }, []);
@@ -24,7 +23,6 @@ const Mac = () => {
           <img src={mac} alt="" className="img" />
         </header>
 
-        {/* <ContentSlider slides={macBookData} /> */}
         <div className="products-container">
           {products.map((mac) => {
             return (
@@ -34,6 +32,7 @@ const Mac = () => {
                   title={`${mac.title} ${mac.subTitle}`}
                   price={mac.price}
                   imgWidth="290px"
+                  productId={mac._id}
                 />
               </>
             );

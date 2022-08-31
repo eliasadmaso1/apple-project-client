@@ -1,52 +1,54 @@
 import React from 'react';
 import Slider from '../../features/Slider/Slider';
 import './product.css';
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {getAllProducts} from '../../service/products';
 
 
-const Product = ({productTitle, productSubTitle, CPU, GPU, memory, SSD, price, status, inBox, gallery}) => {
+const Product = () => {
 
-  const inBoxData = [
-    {
-      title:"MacBook Air with M1 chip",
-       img:"https://upload.wikimedia.org/wikipedia/commons/5/50/Macbook_Air_M1_Silver_PNG.png"
-      },
-    {
-      title:"USB-C Charge Cable (2 m)",
-       img:"https://d3m9l0v76dty0.cloudfront.net/system/photos/7660633/large/c1bf016a29940ac886f2db3565a74ad2.jpg"
-      },
-    {
-      title:"30W USB-C Power Adapter",
-       img:"https://www.pccenter.co.il/images/itempics/1029376_25042021093756.jpg"
-      },
-  ]
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const currentProduct = await getAllProducts().then((res) =>
+        res.find((item) => item._id === id)
+      );
+      setProduct(currentProduct);
+    };
+    getProduct();
+  }, []);
     
     return (
-        <div className="product-container">
-            <nav>MacBook Air</nav>
-            <h1 className="product-page-title">Choose your new MacBook Air</h1>
+      product &&(<div className="product-container">
+            <nav>{product.title}</nav>
+            <h1 className="product-page-title">Choose your new {product.title}</h1>
             <div className="product-page-details">
                 <div className="product-content">
-                  <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba-digitalmat-gallery-5-202111?wid=728&hei=666&fmt=png-alpha&.v=1635187292000" alt="product" width="300px"/>
+                  <img src={product.gallery[3] ? product.gallery[3] : product.gallery[2] || product.gallery[1] } alt="product" className="product-img-description"/>
                 </div>
                 <div className="product-content">
-                    <h1>MacBook Air</h1>
-                    <h2>M1 Chip</h2>
-                    <span className="details-item">8-Core CPU</span>
-                    <span className="details-item">8-Core GPU</span>
-                    <span className="details-item">8GB Unified Memory</span>
-                    <span className="details-item">256GB SSD Storage</span>
-                    <span className="details-item">In Stock</span>
-                    <span className="details-item">1200$</span>
+                    <h1>{product.title}</h1>
+                    <h2>{product.subTitle}</h2>
+                    <span className="details-item">{product.CPU}</span>
+                    <span className="details-item">{product.GPU}</span>
+                    <span className="details-item">{product.memory}</span>
+                    <span className="details-item">{product.storage}</span>
+                    <span className="details-item">{product.status}</span>
+                    <span className="details-item">{product.price}$</span>
                     <button className="product-page-btn">Buy</button>
 
                 </div>
                 <div className="product-content">
-                    {/* <Slider data={gallery}/> */}
+                    <Slider data={product.gallery}/>
                 </div>
              
 
             </div>
-            <>
+            {/* <>
             <header className="inBox-header">
             <h1 className="inBox-header-title">What’s in the Box</h1>
 
@@ -54,7 +56,7 @@ const Product = ({productTitle, productSubTitle, CPU, GPU, memory, SSD, price, s
 
             <div className="inBox">
               {
-                inBoxData.map((item,index)=>{
+                product.inBox.map((item,index)=>{
                   return(
                     <div className="inBox-item" key={index}>
                     <img className="inBox-img" src={item.img} alt="" />
@@ -66,9 +68,9 @@ const Product = ({productTitle, productSubTitle, CPU, GPU, memory, SSD, price, s
           
               
      
-            </div></>
+            </div></> */}
             
-        </div>
+        </div>)
     )
 }
 

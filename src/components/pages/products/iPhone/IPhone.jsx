@@ -1,10 +1,8 @@
 import React from 'react';
 import '../products.css';
 import {useEffect, useState} from 'react';
-import { getAllIPhones } from '../../../service/products';
-import { iPhonesData } from '../../../data';
+import { getAllProducts } from '../../../service/products';
 import iPhone from '../../../images/iphone.png';
-import ContentSlider from "../../../features/contentSlider/ContentSlider";
 import Card from "../../../features/Card/Card";
 
 
@@ -15,7 +13,8 @@ const IPhone = () => {
 
   useEffect(() => {
     const displayProducts = async () => {
-      await getAllIPhones().then((res) => setProducts(res));
+      const iPhones = await getAllProducts().then((res) => res.filter(item => item.category === "iPhone"));
+      setProducts(iPhones);
     };
     displayProducts();
   }, []);
@@ -28,7 +27,6 @@ const IPhone = () => {
             <img src={iPhone} alt="" className="img" />
           </header>
   
-          {/* <ContentSlider slides={iPhonesData} /> */}
           <div className="products-container">
             {products.map((iPhone) => {
               return (
@@ -38,6 +36,7 @@ const IPhone = () => {
                     title={iPhone.title}
                     price={iPhone.price}
                     imgWidth="190px"
+                    productId={iPhone._id}
                   />
                 </>
               );

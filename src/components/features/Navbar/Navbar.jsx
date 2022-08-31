@@ -28,6 +28,8 @@ const Navbar = () => {
         <Link to="/iPad" onClick={handleChange}>iPad</Link>
         <Link to="/airPods" onClick={handleChange}>AirPods</Link>
         <Link to="/login" onClick={handleChange}>Login</Link>
+        <Link to="/admin/products" onClick={handleChange}>Products</Link>
+
 
         <button onClick={handleChange} className="nav-btn nav-close-btn">
           <CloseIcon style={{fontSize:"25px"}}/>

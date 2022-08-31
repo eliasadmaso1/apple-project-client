@@ -1,0 +1,225 @@
+.products-table{
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+
+    
+}
+.table-header{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    border-bottom: solid 2px black;
+}
+.table-header h5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    background-color: #333333;
+
+}
+
+.table-row{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    border-bottom: solid 2px black;
+}
+.table-row h5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.table-product-img{
+    width: 150px;
+}
+.table-btn{
+    width: 90px;
+    height: 30px;
+    background-color: #333333;
+    color: white;
+    border: solid #333333;
+    cursor: pointer;
+
+}
+
+.display-products-responsive{
+    visibility: hidden;
+}
+
+.responsive-container{
+    visibility: hidden;
+
+
+
+
+}
+
+.responsive-item{
+    visibility: hidden;
+
+    
+}
+
+.responsive-title{
+    visibility: hidden;
+
+
+}
+
+.responsive-img{
+    visibility: hidden;
+
+
+}
+
+.responsive-buttons{
+    visibility: hidden;
+
+    
+}
+
+
+
+
+@media only screen and (min-width: 414px) and (max-width: 767px),
+  (min-width: 412px) and (max-width: 767px),
+  (min-width: 390px) and (max-width: 767px),
+  (min-width: 428px) and (max-width: 767px),
+  (min-width: 384px) and (max-width: 767px),
+  (min-width: 360px) and (max-width: 767px) {
+  .products-table{
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+      
+  }
+
+  .table-header{
+      display: flex;
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+
+  }
+
+  .table-header h5{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+
+  }
+
+  .table-row{
+      display: flex;
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+
+  }
+  .table-row h5{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+
+  }
+  .table-product-img{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+      
+
+  }
+
+  .table-btn{
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+
+  }
+
+  .display-products-responsive{
+      height: 100%;
+      visibility: visible;
+      background-color: #dfdede;
+  }
+
+
+.responsive-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    visibility: visible;
+    height: 100%;
+
+
+
+
+
+}
+
+.responsive-item{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    width: 85%;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 15px -5px white;
+    background-color: white;
+    border-radius: 5px;
+
+
+    
+}
+
+.responsive-title{
+    font-size: 17px;
+    color: black;
+    visibility: visible;
+    font-weight: bold;
+
+
+}
+
+.responsive-img{
+    width: 70%;
+    visibility: visible;
+
+
+
+}
+
+.responsive-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    visibility: visible;
+    width: 100%;
+
+
+    
+}
+.responsive-buttons button{
+    width: 30%;
+    height: 30px;
+    border: solid black;
+    background-color:#333333;
+    color: white;
+    cursor: pointer;
+    margin:20px;
+    font-weight: bold;
+    
+
+
+}
+    
+      
+  }

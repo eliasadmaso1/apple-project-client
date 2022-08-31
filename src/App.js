@@ -7,11 +7,12 @@ import Footer from "./components/features/Footer/Footer";
 import Mac from "./components/pages/products/mac/Mac";
 import Product from "./components/pages/product/product";
 import Home from "./components/pages/Home/Home";
-import Products from "./components/pages/Admin/Products/Products";
+import Products from "./components/pages/Admin/Products/Display/Products";
 import Navbar from "./components/features/Navbar/Navbar";
 import IPhone from "./components/pages/products/iPhone/IPhone";
 import IPad from "./components/pages/products/iPad/IPad";
 import AirPods from "./components/pages/products/airPods/AirPods";
+import EditProduct from './components/pages/Admin/Products/Edit/Product';
 
 function App() {
  
@@ -30,6 +31,8 @@ function App() {
         <Route path="/airPods" element={<AirPods />} />
          <Route path="/product/:id" element={<Product />} />
          <Route path="admin/products" element={<Products />} />
+         <Route path="admin/products/edit/:id" element={<EditProduct />} />
+
 
 
       </Routes>

@@ -1,11 +1,9 @@
 import React from 'react';
 import '../products.css';
 import {useEffect, useState} from 'react';
-import ContentSlider from "../../../features/contentSlider/ContentSlider";
 import Card from "../../../features/Card/Card";
 import airPods from "../../../images/airPodsPro.png";
-import { airPodsData } from '../../../data';
-import { getAllAirPods } from '../../../service/products';
+import { getAllProducts } from '../../../service/products';
 
 
 
@@ -17,7 +15,8 @@ const AirPods = () => {
 
   useEffect(() => {
     const displayProducts = async () => {
-      await getAllAirPods().then((res) => setProducts(res));
+      const airPods = await getAllProducts().then((res) => res.filter(item => item.category === "airPods"));
+      setProducts(airPods);
     };
     displayProducts();
   }, []);
@@ -30,16 +29,16 @@ const AirPods = () => {
           <img src={airPods} alt="" className="img" />
         </header>
 
-        {/* <ContentSlider slides={airPodsData} /> */}
         <div className="products-container">
-          {products.map((iPhone) => {
+          {products.map((airPods) => {
             return (
               <>
                 <Card
-                  img={iPhone.gallery[0]}
-                  title={iPhone.title}
-                  price={iPhone.price}
+                  img={airPods.gallery[0]}
+                  title={airPods.title}
+                  price={airPods.price}
                   imgWidth="190px"
+                  productId={airPods._id}
                 />
               </>
             );

@@ -59,14 +59,13 @@ const DATA = [
         slidesPerView={1}
         navigation={{clickable:true}}
         pagination={{clickable:true}}
-        className={modal ? "slider-modal" : "slider-container"}
+        className={"slider-container"}
         >
           {data.map((el,i)=>{
             return(
               <SwiperSlide key={i}>
                 <div className="slide-container">
-                    {modal ? null : <h2>{el.title}</h2>}
-                  <img src={el.img} width="200"/>
+                  <img src={el} width="200"/>
     
                 </div>
               </SwiperSlide>

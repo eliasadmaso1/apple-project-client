@@ -1,0 +1,76 @@
+.edit-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    padding: 20px;
+    width: 40%;
+    height: 80%;
+    background-image: linear-gradient(to bottom, #1a1a1a , #333333);
+    color: white;
+    justify-content: space-around;
+
+
+}
+
+.edit-form input{
+    width: 50%;
+    height: 35px;
+    border: solid 0.5px white;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    color: white;
+}
+.edit-form input:focus{
+    background-color: #333333;
+    border: solid 2px black;
+    outline: none;
+}
+.form-btn{
+    width: 30%;
+    height: 30px;
+    border: solid black;
+    background-color:black;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+
+.edit-product-img{
+    width: 20%;
+}
+
+@media only screen and (min-width: 414px) and (max-width: 767px),
+  (min-width: 412px) and (max-width: 767px),
+  (min-width: 390px) and (max-width: 767px),
+  (min-width: 428px) and (max-width: 767px),
+  (min-width: 384px) and (max-width: 767px),
+  (min-width: 360px) and (max-width: 767px) {
+      .edit-form{
+          width: 90%;
+      }
+      .edit-form input{
+          width: 70%;
+      }
+      .edit-form h4{
+          font-size: 18px;
+          margin-bottom: 10px;
+      }
+      .edit-form label{
+          font-size: 15px;
+          font-weight: bold;
+      }
+      .edit-form .form-btn{
+          font-weight: bold;
+      }
+  }
+
