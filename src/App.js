@@ -13,6 +13,7 @@ import IPhone from "./components/pages/products/iPhone/IPhone";
 import IPad from "./components/pages/products/iPad/IPad";
 import AirPods from "./components/pages/products/airPods/AirPods";
 import EditProduct from './components/pages/Admin/Products/Edit/Product';
+import Cart from "./components/pages/Cart/Cart";
 
 function App() {
  
@@ -30,8 +31,10 @@ function App() {
         <Route path="/iPad" element={<IPad />} />
         <Route path="/airPods" element={<AirPods />} />
          <Route path="/product/:id" element={<Product />} />
-         <Route path="admin/products" element={<Products />} />
-         <Route path="admin/products/edit/:id" element={<EditProduct />} />
+         <Route path="/admin/products" element={<Products />} />
+         <Route path="/admin/products/edit/:id" element={<EditProduct />} />
+         <Route path="/cart" element={<Cart />} />
+
 
 
 

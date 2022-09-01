@@ -46,10 +46,12 @@
 
 .display-products-responsive{
     visibility: hidden;
+    height: 0px;
 }
 
 .responsive-container{
     visibility: hidden;
+    height: 0px;
 
 
 
@@ -58,24 +60,28 @@
 
 .responsive-item{
     visibility: hidden;
+    height: 0px;
 
     
 }
 
 .responsive-title{
     visibility: hidden;
+    height: 0px;
 
 
 }
 
 .responsive-img{
     visibility: hidden;
+    height: 0px;
 
 
 }
 
 .responsive-buttons{
     visibility: hidden;
+    height: 0px;
 
     
 }

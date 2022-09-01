@@ -12,9 +12,9 @@ const Footer = () => {
       <div className="footer-section">
         <h4 className="footer-title">Products</h4>
         <span className="footer-item">Mac</span>
-        <span className="footer-item">Mac</span>
-        <span className="footer-item">Mac</span>
-        <span className="footer-item">Mac</span>
+        <span className="footer-item">iPhone</span>
+        <span className="footer-item">iPad</span>
+        <span className="footer-item">AirPods</span>
 
     
       </div>
@@ -30,12 +30,12 @@ const Footer = () => {
       <div className="footer-section">
       <h4 className="footer-title">Activity Time</h4>
       <span className="footer-item">Sunday 8:00 - 20:00</span>
-      <span className="footer-item">Sunday 8:00 - 20:00</span>
-      <span className="footer-item">Sunday 8:00 - 20:00</span>
-      <span className="footer-item">Sunday 8:00 - 20:00</span>
-      <span className="footer-item">Sunday 8:00 - 20:00</span>
-      <span className="footer-item">Sunday 8:00 - 20:00</span>
-      <span className="footer-item">Sunday 8:00 - 20:00</span>
+      <span className="footer-item">Monday 8:00 - 20:00</span>
+      <span className="footer-item">Tuesday 8:00 - 20:00</span>
+      <span className="footer-item">Wednesday 8:00 - 20:00</span>
+      <span className="footer-item">Thursday 8:00 - 20:00</span>
+      <span className="footer-item">Friday 8:00 - 20:00</span>
+      <span className="footer-item">Saturday 8:00 - 20:00</span>
 
 
 
