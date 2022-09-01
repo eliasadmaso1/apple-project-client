@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/apple-project-client/static/css/main.2a6d76b3.css",
-    "main.js": "/apple-project-client/static/js/main.5579ad0e.js",
+    "main.css": "/apple-project-client/static/css/main.371821a6.css",
+    "main.js": "/apple-project-client/static/js/main.c3feaedc.js",
     "static/js/787.68e0314b.chunk.js": "/apple-project-client/static/js/787.68e0314b.chunk.js",
     "static/media/iPad.png": "/apple-project-client/static/media/iPad.21be5a20405588050dea.png",
     "static/media/mac5.png": "/apple-project-client/static/media/mac5.f7c1322dc1db98496a7a.png",
@@ -21,12 +21,12 @@
     "static/media/macBooks.png": "/apple-project-client/static/media/macBooks.a2f7064d6a5582f91859.png",
     "static/media/airPods.png": "/apple-project-client/static/media/airPods.41f72edd8bbfbe93ef8a.png",
     "index.html": "/apple-project-client/index.html",
-    "main.2a6d76b3.css.map": "/apple-project-client/static/css/main.2a6d76b3.css.map",
-    "main.5579ad0e.js.map": "/apple-project-client/static/js/main.5579ad0e.js.map",
+    "main.371821a6.css.map": "/apple-project-client/static/css/main.371821a6.css.map",
+    "main.c3feaedc.js.map": "/apple-project-client/static/js/main.c3feaedc.js.map",
     "787.68e0314b.chunk.js.map": "/apple-project-client/static/js/787.68e0314b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a6d76b3.css",
-    "static/js/main.5579ad0e.js"
+    "static/css/main.371821a6.css",
+    "static/js/main.c3feaedc.js"
   ]
 }
