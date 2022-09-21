@@ -5,6 +5,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from '@mui/icons-material/Close';
 import { useRef } from "react";
 import AppleIcon from "@mui/icons-material/Apple";
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 
@@ -26,9 +28,9 @@ const Navbar = () => {
         <Link to="/iPhone" onClick={handleChange}>iPhone</Link>
         <Link to="/iPad" onClick={handleChange}>iPad</Link>
         <Link to="/airPods" onClick={handleChange}>AirPods</Link>
-        <Link to="/login" onClick={handleChange}>Login</Link>
         <Link to="/admin/products" onClick={handleChange}>Products</Link>
-        <Link to="/cart" onClick={handleChange}>Cart</Link>
+        <Link to="/cart" onClick={handleChange}><ShoppingCartIcon/></Link>
+        <Link to="/registration" onClick={handleChange}><PersonIcon/></Link>
 
 
 

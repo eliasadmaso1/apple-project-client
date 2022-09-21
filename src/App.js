@@ -14,11 +14,13 @@ import IPad from "./components/pages/products/iPad/IPad";
 import AirPods from "./components/pages/products/airPods/AirPods";
 import EditProduct from './components/pages/Admin/Products/Edit/Product';
 import Cart from "./components/pages/Cart/Cart";
+import {ContextProvider} from './components/context/context';
 
 function App() {
  
 
   return (
+    <ContextProvider value={{  }}>
     <BrowserRouter>
       <Navbar/>
      
@@ -41,6 +43,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </ContextProvider>
   );
 }
 

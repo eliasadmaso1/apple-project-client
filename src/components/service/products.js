@@ -1,8 +1,9 @@
 import axios from "axios";
+import {baseUrl} from './utils';
 
 const getAllProducts = async () => {
   try {
-    const res = await axios.get(`https://apple-project-server.herokuapp.com/product`);
+    const res = await axios.get(`${baseUrl}/product`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -10,7 +11,7 @@ const getAllProducts = async () => {
 };
 const deleteProduct = async (id) => {
   try {
-    const res = await axios.delete(`https://apple-project-server.herokuapp.com/product/${id}`);
+    const res = await axios.delete(`${baseUrl}/product/${id}`);
     console.log(res);
     return res;
   } catch (error) {
@@ -19,7 +20,7 @@ const deleteProduct = async (id) => {
 };
 const updateProduct = async (id, update) => {
   try {
-    const res = await axios.put(`https://apple-project-server.herokuapp.com/product/${id}`, update);
+    const res = await axios.put(`${baseUrl}/product/${id}`, update);
     console.log(res);
     return res;
   } catch (error) {
@@ -29,7 +30,7 @@ const updateProduct = async (id, update) => {
 
 const addProduct = async (body) => {
   try {
-    const res = await axios.post(`https://apple-project-server.herokuapp.com/product`, body);
+    const res = await axios.post(`${baseUrl}/product`, body);
     console.log(res);
     return res;
   } catch (error) {

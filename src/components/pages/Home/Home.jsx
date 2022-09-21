@@ -1,21 +1,11 @@
 import React from "react";
 import "./Home.css";
 import iPhone from "../../images/iphone.png";
-import macBooks from "../../images/macBooks.png";
-import iPhones from "../../images/iPhones.png";
-import iPads from "../../images/iPads.png";
-import img4 from "../../images/mac2.png";
 import mac from "../../images/mac3.png";
-import img6 from "../../images/macBack.png";
-import img7 from "../../images/mac5.png";
-import iPad from "../../images/iPad.png";
-import img9 from "../../images/iPad1.png";
-import img10 from "../../images/iPad2.png";
-import airPods from "../../images/airPods.png";
-import airPodsMax from "../../images/airPodsMax.png";
-import airPods2 from "../../images/airPods2.png";
-import ContentSlider from "../../features/contentSlider/ContentSlider";
+import iPad from "../../images/ipads-back.png";
+import airPods2 from "../../images/airpods-back.png";
 import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const sliderData = [
@@ -134,7 +124,7 @@ const Home = () => {
       <div className="home-section">
         <h1 className="home-section-title">AirPods</h1>
 
-        <img src={airPodsMax} alt="" className="img" />
+        <img src={airPods2} alt="" className="img" />
         <div className="shop-link">
           <h1>Choose Your AirPods</h1>
           <div className="section-div">
@@ -161,7 +151,6 @@ const Home = () => {
             </Link>
           </button>
         </div>
-        <img src={airPods2} alt="" className="img" />
       </div>
     </div>
   );
