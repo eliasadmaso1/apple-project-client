@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import {getAllProducts} from '../../service/products';
 import { addToCart } from '../../service/cart';
 import {useMyContext} from '../../context/context';
+import {Link} from 'react-router-dom';
 
 
 const Product = () => {
@@ -47,7 +48,7 @@ const Product = () => {
                     <span className="details-item">{product.storage}</span>
                     <span className="details-item">{product.status}</span>
                     <span className="details-item">{product.price}$</span>
-                    <button className="product-page-btn" onClick={toCart}>Buy</button>
+                    {user ? <button className="product-page-btn" onClick={toCart}>Buy</button> :  <Link to="/registration"><button className="product-page-btn-registration">Register Here To Buy</button></Link>}
 
                 </div>
                 <div className="product-content">

@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link to="/airPods" onClick={handleChange}>AirPods</Link>
         {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
         <Link to="/cart" onClick={handleChange}>Cart</Link>
-        {user ? <span>{`Hello, ${user.firstName}`}</span> : <Link to="/registration" onClick={handleChange}><PersonIcon/></Link>}
+        {user ? <span>{`Hello, ${user.firstName}`}</span> : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
         {user ? <LogoutIcon className="logOut" onClick={logOut}/>: null}
  
 

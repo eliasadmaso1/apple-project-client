@@ -1,6 +1,7 @@
 import '../auth.css';
 import { useState } from "react";
 import { userLogin } from '../../../service/auth';
+import { Link} from 'react-router-dom';
 
 
 
@@ -39,6 +40,8 @@ const Login = () => {
             <input placeholder="Password" name="password" onChange={handleChange}/>
             <button className="form-btn" onClick={loginUser}>Submit</button>
             {error && <div style={{ color: "red", fontSize: 13.5 }}>{error}</div>}
+            <span style={{color:"white"}}>Not registered yet?</span>
+            <Link to="/registration" style={{color:"white"}}>Click Here</Link>
 
         </form>
         
