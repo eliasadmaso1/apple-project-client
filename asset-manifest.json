@@ -1,32 +1,22 @@
 {
   "files": {
-    "main.css": "/apple-project-client/static/css/main.371821a6.css",
-    "main.js": "/apple-project-client/static/js/main.de0c4e8d.js",
+    "main.css": "/apple-project-client/static/css/main.2233795b.css",
+    "main.js": "/apple-project-client/static/js/main.62174a37.js",
     "static/js/787.68e0314b.chunk.js": "/apple-project-client/static/js/787.68e0314b.chunk.js",
-    "static/media/iPad.png": "/apple-project-client/static/media/iPad.21be5a20405588050dea.png",
-    "static/media/mac5.png": "/apple-project-client/static/media/mac5.f7c1322dc1db98496a7a.png",
-    "static/media/iPad1.png": "/apple-project-client/static/media/iPad1.db1d8c7eba1f6ae1c30a.png",
-    "static/media/iPad2.png": "/apple-project-client/static/media/iPad2.d881a884163859f53102.png",
+    "static/media/ipads-back.png": "/apple-project-client/static/media/ipads-back.d13f2849baa8dd3ebb33.png",
     "static/media/iPadHeader.png": "/apple-project-client/static/media/iPadHeader.652041a4aadd0aeb6b58.png",
-    "static/media/airPodsMax.png": "/apple-project-client/static/media/airPodsMax.936df505ea9ca6243543.png",
     "static/media/iphone.png": "/apple-project-client/static/media/iphone.2e3256fcaf15d934c5f8.png",
-    "static/media/iPhones.png": "/apple-project-client/static/media/iPhones.5da21f85edcf957e6909.png",
-    "static/media/mac2.png": "/apple-project-client/static/media/mac2.ad380c5fc77f3c63f24f.png",
     "static/media/mac3.png": "/apple-project-client/static/media/mac3.d1eb1c24176a3a2872bc.png",
     "static/media/airPodsPro.png": "/apple-project-client/static/media/airPodsPro.6bec05b998437cbaf98c.png",
-    "static/media/airPods2.png": "/apple-project-client/static/media/airPods2.03340238dd5c5f6fab47.png",
-    "static/media/iPads.png": "/apple-project-client/static/media/iPads.fd38fed7a596d19f9318.png",
+    "static/media/airpods-back.png": "/apple-project-client/static/media/airpods-back.8c8fee874f1b8938d5ac.png",
     "static/media/mac.png": "/apple-project-client/static/media/mac.99fcddad3fa7ce44746e.png",
-    "static/media/macBack.png": "/apple-project-client/static/media/macBack.8458059dd78ad0478933.png",
-    "static/media/macBooks.png": "/apple-project-client/static/media/macBooks.a2f7064d6a5582f91859.png",
-    "static/media/airPods.png": "/apple-project-client/static/media/airPods.41f72edd8bbfbe93ef8a.png",
     "index.html": "/apple-project-client/index.html",
-    "main.371821a6.css.map": "/apple-project-client/static/css/main.371821a6.css.map",
-    "main.de0c4e8d.js.map": "/apple-project-client/static/js/main.de0c4e8d.js.map",
+    "main.2233795b.css.map": "/apple-project-client/static/css/main.2233795b.css.map",
+    "main.62174a37.js.map": "/apple-project-client/static/js/main.62174a37.js.map",
     "787.68e0314b.chunk.js.map": "/apple-project-client/static/js/787.68e0314b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.371821a6.css",
-    "static/js/main.de0c4e8d.js"
+    "static/css/main.2233795b.css",
+    "static/js/main.62174a37.js"
   ]
 }
