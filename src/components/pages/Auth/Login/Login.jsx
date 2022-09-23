@@ -23,10 +23,11 @@ const Login = () => {
         e.preventDefault();
         const res = await userLogin(values.email, values.password)
             if (res.data) {
-              localStorage.setItem("token", res.data);
+              localStorage.setItem("token", res.data.token);
             } else {
               setError("Incorrect Email or Password , Resgister below");
             }
+          
     
       };
 

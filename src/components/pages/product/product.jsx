@@ -4,6 +4,8 @@ import './product.css';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {getAllProducts} from '../../service/products';
+import { addToCart } from '../../service/cart';
+import {useMyContext} from '../../context/context';
 
 
 const Product = () => {
@@ -11,6 +13,7 @@ const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [message, setMessage] = useState("");
+  const {user} = useMyContext();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -21,6 +24,11 @@ const Product = () => {
     };
     getProduct();
   }, []);
+
+  const toCart = async()=>{
+    await addToCart(product._id,user._id);
+
+  }
     
     return (
       product &&(<div className="product-container">
@@ -39,7 +47,7 @@ const Product = () => {
                     <span className="details-item">{product.storage}</span>
                     <span className="details-item">{product.status}</span>
                     <span className="details-item">{product.price}$</span>
-                    <button className="product-page-btn">Buy</button>
+                    <button className="product-page-btn" onClick={toCart}>Buy</button>
 
                 </div>
                 <div className="product-content">
@@ -48,28 +56,6 @@ const Product = () => {
              
 
             </div>
-            {/* <>
-            <header className="inBox-header">
-            <h1 className="inBox-header-title">What’s in the Box</h1>
-
-            </header>
-
-            <div className="inBox">
-              {
-                product.inBox.map((item,index)=>{
-                  return(
-                    <div className="inBox-item" key={index}>
-                    <img className="inBox-img" src={item.img} alt="" />
-                    <span className="inBox-title">{item.title}</span>
-                  </div>
-                  )
-                })
-              }
-          
-              
-     
-            </div></> */}
-            
         </div>)
     )
 }

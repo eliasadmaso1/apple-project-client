@@ -18,7 +18,7 @@
 
 .cart-tr-th{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     justify-items: center;
     background-color: #5c5c5c;
     width: 100%;
@@ -27,7 +27,7 @@
 
 .cart-tr{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     justify-items: center;
     width: 100%;
 

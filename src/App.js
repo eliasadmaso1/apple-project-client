@@ -15,12 +15,31 @@ import AirPods from "./components/pages/products/airPods/AirPods";
 import EditProduct from './components/pages/Admin/Products/Edit/Product';
 import Cart from "./components/pages/Cart/Cart";
 import {ContextProvider} from './components/context/context';
+import { useEffect, useState } from "react";
+import jwt from "jsonwebtoken";
 
 function App() {
+
+  const [user,setUser] = useState();
+  const [toggle,setToggle] = useState();
+  const changeToggle = ()=>{
+    setToggle(prev => !prev)
+  };
+
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if (token) {
+      const _user = jwt.verify(token, "eliasadmaso");
+      setUser(_user);
+    }
+
+  },[]);
+
+  console.log(user);
  
 
   return (
-    <ContextProvider value={{  }}>
+    <ContextProvider value={{ user, toggle, changeToggle  }}>
     <BrowserRouter>
       <Navbar/>
      
