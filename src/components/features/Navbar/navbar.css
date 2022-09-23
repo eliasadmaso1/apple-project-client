@@ -32,6 +32,17 @@ nav a:hover{
 
 }
 
+nav .logOut{
+    
+    margin: 0 2rem;
+    color: var(--txtColor);
+}
+
+nav .logOut:hover{
+    color: var(--secondaryColor);
+
+}
+
 header .nav-btn{
     padding: 5px;
     cursor: pointer;

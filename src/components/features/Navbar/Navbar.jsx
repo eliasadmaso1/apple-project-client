@@ -8,6 +8,7 @@ import AppleIcon from "@mui/icons-material/Apple";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {useMyContext} from '../../context/context';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -19,6 +20,11 @@ const Navbar = () => {
 
   const handleChange = ()=>{
       navRef.current.classList.toggle('responsive-navbar');
+  }
+
+  const logOut = ()=>{
+    localStorage.removeItem("token");
+    window.location.replace("apple-project-client")
   }
 
   return (
@@ -34,6 +40,8 @@ const Navbar = () => {
         {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
         <Link to="/cart" onClick={handleChange}>Cart</Link>
         {user ? <span>{`Hello, ${user.firstName}`}</span> : <Link to="/registration" onClick={handleChange}><PersonIcon/></Link>}
+        {user ? <LogoutIcon className="logOut" onClick={logOut}/>: null}
+ 
 
 
 
