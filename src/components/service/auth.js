@@ -10,7 +10,12 @@ export const userRegisteraion = async(firstName, lastName, userName, email, pass
 
 }
 
-const userLogin = async(req,res)=>{
+export const userLogin = async(email,password)=>{
+  try {
+    return axios.post(`${baseUrl}/auth/login`,{ email, password })
+  } catch (error) {
+    console.log(error);
+  }
 
 }
 

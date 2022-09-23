@@ -12,6 +12,7 @@ const Registration = () => {
     const [values, setValues] = useState({
       firstName: "",
       lastName: "",
+      userName:"",
       email: "",
       password: "",
     });
@@ -43,7 +44,9 @@ const Registration = () => {
 
       const navigate = useNavigate();
 
-      const register = async () => {
+      const register = async (e) => {
+        e.preventDefault();
+
         setFormErrors(validate(values));
     
         const res = await userRegisteraion(
@@ -55,7 +58,7 @@ const Registration = () => {
         );
         setMessageFromServer(res.data.message);
         if (res.data.success) {
-          navigate("/Login");
+          navigate("/login");
         }
       };
 
@@ -63,12 +66,15 @@ const Registration = () => {
         <div className="form-container">
             <form className="form">
                 <h3 className="form-title">Register Here</h3>
-                <input placeholder="First Name" name="firstName"/>
-                <input placeholder="Last Name" name="lastName"/>
-                <input placeholder="User Name" name="userName"/>
-                <input placeholder="Email" name="email"/>
-                <input placeholder="Password" name="password"/>
-                <button className="form-btn">Submit</button>
+                <input placeholder="First Name" name="firstName" onChange={handleChange}/>
+                <input placeholder="Last Name" name="lastName" onChange={handleChange}/>
+                <input placeholder="User Name" name="userName" onChange={handleChange}/>
+                <span>{formErrors.userName}</span>
+                <input placeholder="Email" name="email" onChange={handleChange}/>
+                <span>{formErrors.email}</span>
+                <input placeholder="Password" name="password" onChange={handleChange}/>
+                <span>{formErrors.password}</span>
+                <button className="form-btn" onClick={register}>Submit</button>
 
             </form>
             
