@@ -29,7 +29,7 @@ const Home = () => {
     <div className="home-container">
     
       <div className="home-section">
-        <h1 className="home-section-title">iPhons</h1>
+        <h1 className="home-section-title">iPhons123</h1>
         <img src={iPhone} alt="" className="img" />
         <div className="shop-link">
           <h1>Choose Your iPhone</h1>
