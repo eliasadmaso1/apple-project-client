@@ -2,7 +2,8 @@ import { deleteUser, getAllUsers, updateUser } from '../../../service/users';
 import '../auth.css';
 import {userRegisteraion} from "../../../service/auth";
 import {useState} from 'react';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 const Registration = () => {
@@ -74,6 +75,7 @@ const Registration = () => {
                 <span>{formErrors.email}</span>
                 <input placeholder="Password" name="password" onChange={handleChange}/>
                 <span>{formErrors.password}</span>
+                <span>Already registered? <Link to="/login" style={{color:"white",textDecoration:"none"}}>Click Here</Link></span>
                 <button className="form-btn" onClick={register}>Submit</button>
 
             </form>

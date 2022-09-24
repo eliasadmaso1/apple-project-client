@@ -6,12 +6,15 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import {useMyContext} from '../../context/context';
 import {getCartProducts} from '../../service/cart';
 import { getAllProducts } from '../../service/products';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const Cart = () => {
 
     const { user } = useMyContext();
 
     const [products,setProducts] = useState([]);
+    const [load,setLoad] = useState(true);
 
     useEffect(()=>{
         const getUserProducts = async()=>{
@@ -27,7 +30,8 @@ const Cart = () => {
                           ...product
                         };
                         });
-                        setProducts(product)
+                        setProducts(product);
+                        setLoad(false);
                     });
                 }
             }
@@ -41,7 +45,11 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-         <div className="cart-table">
+            {load === true ?  <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
+    : products.length === 0 ?     <div>There is no products in your cart</div>
+   : <div className="cart-table">
              <div className="cart-tr-th">
              <span className="th">Product</span>
                  <span className="th">Description</span>
@@ -76,7 +84,8 @@ const Cart = () => {
              })}
           
 
-         </div>
+         </div> }
+      
             
         </div>
     )

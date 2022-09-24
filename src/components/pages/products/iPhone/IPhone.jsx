@@ -4,12 +4,14 @@ import {useEffect, useState} from 'react';
 import { getAllProducts } from '../../../service/products';
 import iPhone from '../../../images/iphone.png';
 import Card from "../../../features/Card/Card";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 
 
 const IPhone = () => {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
 
   useEffect(() => {
     const displayProducts = async () => {
@@ -27,21 +29,27 @@ const IPhone = () => {
             <img src={iPhone} alt="" className="img" />
           </header>
   
-          <div className="products-container">
-            {products.map((iPhone) => {
-              return (
-                <>
-                  <Card
-                    img={iPhone.gallery[0]}
-                    title={iPhone.title}
-                    price={iPhone.price}
-                    imgWidth="190px"
-                    productId={iPhone._id}
-                  />
-                </>
-              );
-            })}
-          </div>
+          {products ?  <div className="products-container">
+          { products.map((product) => {
+            return (
+              <>
+                <Card
+                  img={product.gallery[0]}
+                  title={`${product.title}`}
+                  price={product.price}
+                  imgWidth="250px"
+                  productId={product._id}
+                />
+              </>
+            );
+          }) 
+       
+        }
+        </div> : <div className="loader-div">
+<Box sx={{ display: 'flex' }}>
+<CircularProgress />
+</Box>
+</div> }
         </div>
       </>
     )

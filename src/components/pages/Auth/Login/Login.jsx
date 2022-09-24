@@ -41,7 +41,7 @@ const Login = () => {
             <button className="form-btn" onClick={loginUser}>Submit</button>
             {error && <div style={{ color: "red", fontSize: 13.5 }}>{error}</div>}
             <span style={{color:"white"}}>Not registered yet?</span>
-            <Link to="/registration" style={{color:"white"}}>Click Here</Link>
+            <Link to="/registration" style={{color:"white",textDecoration:"none"}}>Click Here</Link>
 
         </form>
         
