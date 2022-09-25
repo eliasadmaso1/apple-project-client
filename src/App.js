@@ -22,8 +22,9 @@ function App() {
 
   const [user,setUser] = useState();
   const [toggle,setToggle] = useState();
+
   const changeToggle = ()=>{
-    setToggle(prev => !prev)
+    setToggle(prev => !prev);
   };
 
   useEffect(()=>{

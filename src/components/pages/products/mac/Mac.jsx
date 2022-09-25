@@ -5,17 +5,25 @@ import mac from "../../../images/mac.png";
 import { getAllProducts } from "../../../service/products";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import Product from "../../product/product";
+
 
 const Mac = () => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [load,setLoad] = useState(true);
 
   useEffect(() => {
     const displayProducts = async () => {
       const macs = await getAllProducts().then((res) => res.filter(item => item.category === "MacBook"));
       setProducts(macs);
+      setLoad(false);
     };
-    displayProducts();
+
+    const productsFromServer = async()=>{
+      await getAllProducts().then(res => !res && setLoad(false));
+    }
+  productsFromServer();
+  displayProducts();
+ 
   }, []);
 
   return (
@@ -25,7 +33,13 @@ const Mac = () => {
           <h1 className="header-title">MacBooks</h1>
           <img src={mac} alt="" className="img" />
         </header>
-      {products ?  <div className="products-container">
+      {load === true ? <div className="loader-div"><Box sx={{ display: 'flex' }}>
+       
+<CircularProgress />
+    
+    
+</Box></div> : products.length === 0 ? <div className="not-loaded"><span>Server Error - </span>Products Not Loaded</div> :
+<div className="products-container">
           { products.map((product) => {
             return (
               <>
@@ -38,14 +52,13 @@ const Mac = () => {
                 />
               </>
             );
-          }) 
+          })
        
         }
-        </div> : <div className="loader-div">
-<Box sx={{ display: 'flex' }}>
-<CircularProgress />
-</Box>
-</div> }
+        </div> 
+      
+
+ }
        
       </div>
     </>

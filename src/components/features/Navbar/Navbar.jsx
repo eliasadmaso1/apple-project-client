@@ -14,12 +14,13 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbar = () => {
 
-  const { user } = useMyContext();
+  const { user,changeToggle } = useMyContext();
 
   const navRef = useRef();
 
   const handleChange = ()=>{
       navRef.current.classList.toggle('responsive-navbar');
+      changeToggle();
   }
 
   const logOut = ()=>{

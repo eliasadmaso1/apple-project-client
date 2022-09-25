@@ -48,6 +48,19 @@
     justify-content: center;
     align-items: center;
     height: 300px;
+    flex-direction: column;
+}
+
+.not-loaded{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.not-loaded span{
+    color: brown;
+    font-weight: bold;
+    margin-right: 5px; 
 }
 
 

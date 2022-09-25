@@ -35,20 +35,21 @@ const Cart = () => {
                     });
                 }
             }
+     
         getUserProducts();
 
     },[]);
 
-    console.log('====================================');
-    console.log({products,user});
-    console.log('====================================');
+    
+
+ 
 
     return (
         <div className="cart-container">
             {load === true ?  <Box sx={{ display: 'flex' }}>
       <CircularProgress />
     </Box>
-    : products.length === 0 ?     <div>There is no products in your cart</div>
+    : products.length === 0 ?     <div style={{fontWeight:"bold"}}>There is no products in your cart</div>
    : <div className="cart-table">
              <div className="cart-tr-th">
              <span className="th">Product</span>
