@@ -25,6 +25,7 @@ const Login = () => {
         const res = await userLogin(values.email, values.password)
             if (res.data) {
               localStorage.setItem("token", res.data.token);
+              window.location.replace("/apple-project-client")
             } else {
               setError("Incorrect Email or Password , Resgister below");
             }

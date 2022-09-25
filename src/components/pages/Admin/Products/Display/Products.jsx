@@ -63,10 +63,10 @@ const Products = () => {
           return(
             <div className="responsive-item">
             <span className="responsive-title">{product.title}</span>
-            <img src={product.gallery[0]} alt="" className="responsive-img"/>
+            <img src={product.gallery[0]} className="responsive-img"/>
             <div className="responsive-buttons">
-              <button>delete</button>
-              <button>edit</button>
+              <button className="table-btn-responsive">delete</button>
+              <Link to={`/admin/products/edit/${product._id}`}><button className="table-btn-responsive">Edit</button></Link>
   
             </div>
           </div>

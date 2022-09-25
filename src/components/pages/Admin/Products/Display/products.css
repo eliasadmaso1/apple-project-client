@@ -74,7 +74,7 @@
 
 .responsive-img{
     visibility: hidden;
-    height: 0px;
+
 
 
 }
@@ -174,6 +174,7 @@
     justify-content: center;
     align-items: center;
     visibility: visible;
+    justify-content: space-around;
     width: 85%;
     height: 100%;
     padding: 20px;
@@ -190,13 +191,15 @@
     color: black;
     visibility: visible;
     font-weight: bold;
+    height: 50px;
 
 
 }
 
 .responsive-img{
-    width: 70%;
+    width: 150px;
     visibility: visible;
+    height: 150px;
 
 
 
@@ -213,8 +216,9 @@
 
     
 }
-.responsive-buttons button{
-    width: 30%;
+
+.responsive-buttons .table-btn-responsive{
+    width: 100px;
     height: 30px;
     border: solid black;
     background-color:#333333;
@@ -222,8 +226,6 @@
     cursor: pointer;
     margin:20px;
     font-weight: bold;
-    
-
 
 }
     

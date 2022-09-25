@@ -14,7 +14,7 @@ const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [message, setMessage] = useState("");
-  const {user} = useMyContext();
+  const {user, changeToggle } = useMyContext();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -28,6 +28,7 @@ const Product = () => {
 
   const toCart = async()=>{
     await addToCart(product._id,user._id);
+    changeToggle();
 
   }
     

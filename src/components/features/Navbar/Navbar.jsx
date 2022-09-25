@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,12 +9,28 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {useMyContext} from '../../context/context';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Badge from '@mui/material/Badge';
+import {getCartProducts} from '../../service/cart';
+
 
 
 
 const Navbar = () => {
 
-  const { user,changeToggle } = useMyContext();
+  const { user,changeToggle,toggle } = useMyContext();
+  const [products,setProducts] = useState([]);
+
+  useEffect(()=>{
+    const lengthOfCartProducts = async()=>{
+      await getCartProducts(user._id).then(res => setProducts(res.data));
+      changeToggle();
+    };
+
+    lengthOfCartProducts();
+  
+
+
+  },[user,toggle])
 
   const navRef = useRef();
 
@@ -25,7 +41,7 @@ const Navbar = () => {
 
   const logOut = ()=>{
     localStorage.removeItem("token");
-    window.location.replace("apple-project-client")
+    window.location.replace("/apple-project-client")
   }
 
   return (
@@ -39,7 +55,9 @@ const Navbar = () => {
         <Link to="/iPad" onClick={handleChange}>iPad</Link>
         <Link to="/airPods" onClick={handleChange}>AirPods</Link>
         {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
-        <Link to="/cart" onClick={handleChange}>Cart</Link>
+        <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">
+        Cart
+    </Badge></Link>
         {user ? <span>{`Hello, ${user.firstName}`}</span> : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
         {user ? <LogoutIcon className="logOut" onClick={logOut}/>: null}
  
