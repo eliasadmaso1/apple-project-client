@@ -6,7 +6,7 @@
 }
 .table-header{
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(7,1fr);
     border-bottom: solid 2px black;
 }
 .table-header h5{
@@ -21,7 +21,7 @@
 
 .table-row{
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(7,1fr);
     border-bottom: solid 2px black;
 }
 .table-row h5{

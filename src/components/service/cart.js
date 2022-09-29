@@ -1,6 +1,16 @@
 import {baseUrl} from './utils';
 import axios from 'axios';
 
+export const getOrders = async () => {
+    try {
+      const res = await axios.get(`${baseUrl}/cartProducts`);
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 export const getCartProducts = async (id) => {
     try {
       const res = await axios.get(`${baseUrl}/cartProducts/${id}`);

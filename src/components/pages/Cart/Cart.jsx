@@ -110,7 +110,7 @@ const Cart = () => {
               <div className="item">delivery - 20$</div>
               <div className="item">sub-total - {subTotal}$</div>
               <div className="item">total - {subTotal + 20}$ </div>
-              <Link to="/"><button className="check-btn">Check</button></Link>
+              <Link to="/paypal"><button className="check-btn">Check</button></Link>
 
           </div>
 
