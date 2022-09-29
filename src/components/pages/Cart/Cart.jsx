@@ -9,6 +9,7 @@ import { getAllProducts } from '../../service/products';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import {addToCart, decrementProduct, deleteProduct} from '../../service/cart';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -46,7 +47,7 @@ const Cart = () => {
         return price;
       }, 0);
     
-      let subTotal = Math.floor(totalPrice);
+      const subTotal = Math.floor(totalPrice);
 
  
 
@@ -105,7 +106,13 @@ const Cart = () => {
                  )
 
              })}
-          
+          <div className="table-footer">
+              <div className="item">delivery - 20$</div>
+              <div className="item">sub-total - {subTotal}$</div>
+              <div className="item">total - {subTotal + 20}$ </div>
+              <Link to="/"><button className="check-btn">Check</button></Link>
+
+          </div>
 
          </div> }
       
