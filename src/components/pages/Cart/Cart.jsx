@@ -8,10 +8,11 @@ import {getCartProducts} from '../../service/cart';
 import { getAllProducts } from '../../service/products';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import {addToCart, decrementProduct, deleteProduct} from '../../service/cart';
 
 const Cart = () => {
 
-    const { user } = useMyContext();
+    const { user, changeToggle, toggle } = useMyContext();
 
     const [products,setProducts] = useState([]);
     const [load,setLoad] = useState(true);
@@ -38,7 +39,18 @@ const Cart = () => {
      
         getUserProducts();
 
-    },[]);
+    },[user,toggle]);
+
+    const totalPrice = products.reduce((price, product) => {
+        price = price + product.price * product.quantity;
+        return price;
+      }, 0);
+    
+      let subTotal = Math.floor(totalPrice);
+
+ 
+
+   
 
     
 
@@ -53,7 +65,6 @@ const Cart = () => {
    : <div className="cart-table">
              <div className="cart-tr-th">
              <span className="th">Product</span>
-                 <span className="th">Description</span>
                  <span className="th">Quantity</span>
                  <span className="th">Remove</span>
                  <span className="th">Price</span>
@@ -62,21 +73,32 @@ const Cart = () => {
              {products.map((item)=>{
                  return(
                     <div className="cart-tr">
-                    <div className="td"><img src={item.gallery[0]} width="100"/></div>
-                    <div className="td">{item.title}</div>
+                    <div className="td"><h3>{item.title}</h3><img src={item.gallery[0]} width="100"/></div>
                     <div className="td">
                         <div className="quantity-btns">
-                            <button className="cart-btn"><AddIcon/></button>
+                            <button className="cart-btn" onClick={async()=>{
+                                await addToCart(item._id,user._id);
+                                changeToggle();
+                                
+                            }}><AddIcon/></button>
                             <button className="cart-btn">{item.quantity}</button>
-                            <button className="cart-btn"><RemoveIcon/></button>
+                            <button className="cart-btn" onClick={async()=>{
+                                await decrementProduct(item._id,user._id);
+                                changeToggle();
+
+                            }}><RemoveIcon/></button>
    
                         </div>
                     </div>
                     <div className="td">
-                        <button className="cart-btn"><DeleteIcon/></button>
+                        <button className="cart-btn" onClick={async()=>{
+                            await deleteProduct(item._id,user._id);
+                            changeToggle();
+
+                        }}><DeleteIcon/></button>
    
                     </div>
-                    <div className="td">{item.price}$</div>
+                    <div className="td">{item.price * item.quantity}$</div>
    
                 </div>
 

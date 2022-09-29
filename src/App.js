@@ -36,7 +36,6 @@ function App() {
 
   },[]);
 
-  console.log(user);
  
 
   return (

@@ -18,7 +18,7 @@
 
 .cart-tr-th{
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     justify-items: center;
     background-color: #5c5c5c;
     width: 100%;
@@ -27,7 +27,7 @@
 
 .cart-tr{
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     justify-items: center;
     width: 100%;
 
@@ -46,6 +46,7 @@
     height: 200px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     width: 80%;
     justify-content: center;
     font-weight: bold;
@@ -75,7 +76,9 @@
 (min-width: 384px) and (max-width: 767px),
 (min-width: 360px) and (max-width: 767px) {
     .cart-table{
-        width: 100%;
+        width: 95%;
+        height: 90%;
+        margin: 10px;
     }
     .quantity-btns{
         flex-direction: column;
@@ -84,5 +87,13 @@
     .cart-btn{
         width: 50%;
         margin: 5px;
+    }
+    .cart-tr-th{
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    }
+    .cart-tr{
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+
     }
 }

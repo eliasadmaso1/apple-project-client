@@ -33,20 +33,20 @@ const Products = () => {
         <h5>Image</h5>
         <h5>Name</h5>
         <h5>Price</h5>
-        <h5>Sales</h5>
+        <h5>Status</h5>
         <h5>Manage</h5>
       </div>
 
-      {products.map((product) => {
+      {products.map((product,i) => {
         return (
-          <div className="table-row">
+          <div className="table-row" key={i}>
             <h5>{product._id}</h5>
             <h5>
               <img src={product.gallery[0]} className="table-product-img" />
             </h5>
             <h5>{product.title}<br></br>{product?.subTitle}</h5>
             <h5>{`${product.price}$`}</h5>
-            <h5>{product.status}</h5>
+            <h5 style={{color:"green"}}>{product.status}</h5>
             <h5>
               <button className="table-btn" onClick={()=> deleteItem(product._id)}>Delete</button>
               <Link to={`/admin/products/edit/${product._id}`}><button className="table-btn">Edit</button></Link>
