@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/apple-project-client/static/css/main.aafa3a51.css",
-    "main.js": "/apple-project-client/static/js/main.c17710c9.js",
+    "main.js": "/apple-project-client/static/js/main.ea086beb.js",
     "static/js/787.68e0314b.chunk.js": "/apple-project-client/static/js/787.68e0314b.chunk.js",
     "static/media/ipads-back.png": "/apple-project-client/static/media/ipads-back.d13f2849baa8dd3ebb33.png",
     "static/media/iphone.png": "/apple-project-client/static/media/iphone.2e3256fcaf15d934c5f8.png",
@@ -11,11 +11,11 @@
     "static/media/mac.png": "/apple-project-client/static/media/mac.99fcddad3fa7ce44746e.png",
     "index.html": "/apple-project-client/index.html",
     "main.aafa3a51.css.map": "/apple-project-client/static/css/main.aafa3a51.css.map",
-    "main.c17710c9.js.map": "/apple-project-client/static/js/main.c17710c9.js.map",
+    "main.ea086beb.js.map": "/apple-project-client/static/js/main.ea086beb.js.map",
     "787.68e0314b.chunk.js.map": "/apple-project-client/static/js/787.68e0314b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aafa3a51.css",
-    "static/js/main.c17710c9.js"
+    "static/js/main.ea086beb.js"
   ]
 }
