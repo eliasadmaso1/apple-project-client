@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getAllUsers } from '../../../service/users';
+import { useMyContext } from '../../../context/context';
+import { deleteUser, getAllUsers } from '../../../service/users';
 import './users.css';
 
 function Users() {
 
     const [users,setUsers] = useState([]);
+
+    const { toggle, changeToggle } = useMyContext();
 
 
     useEffect(()=>{
@@ -16,11 +19,13 @@ function Users() {
         };
         displayUsers();
 
-    },[]);
+    },[toggle]);
+
+   
 
     return (
         <>
-        <div className="products-table">
+        <div className="users-table">
           <div className="table-header-users">
             <h5>ID</h5>
             <h5>Image</h5>
@@ -42,10 +47,14 @@ function Users() {
                 <h5>{user.lastName}</h5>
                 <h5>{user.userName}</h5>
                 <h5>{user.email}</h5>
-                <h5>{user.isAdmin}</h5>
+                <h5>{user.isAdmin ? <span style={{color:"green"}}>Admin</span> : <span style={{color:"red"}}>Not Admin</span>}</h5>
                 <h5>{user.createdAt.slice(0,10)}</h5>
                 <h5>
-                  <button className="table-btn">Delete</button>
+                  <button className="table-btn" onClick={async()=>{
+                      await deleteUser(user._id);
+                      changeToggle();
+
+                  }}>Delete</button>
                 </h5>
               </div>
             );
@@ -58,7 +67,10 @@ function Users() {
             {users.map((user)=>{
               return(
                 <div className="responsive-item">
-                <span className="responsive-title">{user.firstName}</span>
+                <h5 className="responsive-title">{user._id.slice(0,10)}</h5>
+                <h5><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="90"/></h5>
+                <h5 className="responsive-title">{user.email}</h5>
+                <h5>{user.isAdmin ? <span style={{color:"green"}}>Admin</span> : <span style={{color:"red"}}>Not Admin</span>}</h5>
                 <div className="responsive-buttons">
                   <button className="table-btn-responsive">delete</button>      
                 </div>

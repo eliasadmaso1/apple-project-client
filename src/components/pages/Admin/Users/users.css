@@ -1,4 +1,4 @@
-.products-table{
+.users-table{
     height: 100%;
     font-family: 'Open Sans', sans-serif;
 
@@ -95,14 +95,14 @@
   (min-width: 428px) and (max-width: 767px),
   (min-width: 384px) and (max-width: 767px),
   (min-width: 360px) and (max-width: 767px) {
-  .products-table{
+  .users-table{
       visibility: hidden;
       width: 0px;
       height: 0px;
       
   }
 
-  .table-header{
+  .table-header-users{
       display: flex;
       visibility: hidden;
       width: 0px;
@@ -110,21 +110,21 @@
 
   }
 
-  .table-header h5{
+  .table-header-users h5{
     visibility: hidden;
     width: 0px;
     height: 0px;
 
   }
 
-  .table-row{
+  .table-row-users{
       display: flex;
       visibility: hidden;
       width: 0px;
       height: 0px;
 
   }
-  .table-row h5{
+  .table-row-users h5{
     visibility: hidden;
     width: 0px;
     height: 0px;
@@ -192,6 +192,7 @@
     visibility: visible;
     font-weight: bold;
     height: 50px;
+    margin-top: 10px;
 
 
 }
