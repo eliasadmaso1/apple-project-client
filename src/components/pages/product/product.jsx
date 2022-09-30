@@ -14,7 +14,7 @@ const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [message, setMessage] = useState("");
-  const {user, changeToggle } = useMyContext();
+  const {user, changeToggle,toggle } = useMyContext();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -35,7 +35,7 @@ const Product = () => {
     return (
       product &&(<div className="product-container">
             <nav>{product.title}</nav>
-            <h1 className="product-page-title">Choose your new {product.title}</h1>
+            {/* <h1 className="product-page-title">Choose your new {product.title}</h1> */}
             <div className="product-page-details">
                 <div className="product-content">
                   <img src={product.gallery[3] ? product.gallery[3] : product.gallery[2] || product.gallery[1] } alt="product" className="product-img-description"/>
@@ -47,7 +47,7 @@ const Product = () => {
                     <span className="details-item">{product.GPU}</span>
                     <span className="details-item">{product.memory}</span>
                     <span className="details-item">{product.storage}</span>
-                    <span className="details-item">{product.status}</span>
+                    <span className="details-item" style={{color:"green"}}>{product.status}</span>
                     <span className="details-item">{product.price}$</span>
                     {user ? <button className="product-page-btn" onClick={toCart}>Buy</button> :  <Link to="/registration"><button className="product-page-btn-registration">Register Here To Buy</button></Link>}
 

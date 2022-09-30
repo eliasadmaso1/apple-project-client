@@ -17,7 +17,7 @@ import {getCartProducts} from '../../service/cart';
 
 const Navbar = () => {
 
-  const { user,changeToggle,toggle } = useMyContext();
+  const { user,changeToggle,toggle} = useMyContext();
   const [products,setProducts] = useState([]);
 
   useEffect(()=>{
@@ -55,11 +55,12 @@ const Navbar = () => {
         <Link to="/iPad" onClick={handleChange}>iPad</Link>
         <Link to="/airPods" onClick={handleChange}>AirPods</Link>
         {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
+        {user?.isAdmin ? <Link to="/admin/users" onClick={handleChange}>Users</Link> : null}
         <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">
         Cart
     </Badge></Link>
         {user ? <span>{`Hello, ${user.firstName}`}</span> : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
-        {user ? <LogoutIcon className="logOut" onClick={logOut}/>: null}
+        {user ? <span className="logOut" onClick={logOut}>LogOut</span>: null}
  
 
 

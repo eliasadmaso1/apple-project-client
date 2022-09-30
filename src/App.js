@@ -17,15 +17,18 @@ import Cart from "./components/pages/Cart/Cart";
 import {ContextProvider} from './components/context/context';
 import { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
+import Users from "./components/pages/Admin/Users/Users";
 
 function App() {
 
   const [user,setUser] = useState();
-  const [toggle,setToggle] = useState();
+  const [toggle,setToggle] = useState(true);
 
   const changeToggle = ()=>{
     setToggle(prev => !prev);
   };
+
+ 
 
   useEffect(()=>{
     const token = localStorage.getItem("token");
@@ -39,9 +42,10 @@ function App() {
  
 
   return (
-    <ContextProvider value={{ user, toggle, changeToggle  }}>
+    <ContextProvider value={{ user, toggle, changeToggle}}>
     <BrowserRouter>
       <Navbar/>
+
      
       <Routes>
         <Route path="/apple-project-client" element={<Home/>} />
@@ -52,7 +56,8 @@ function App() {
         <Route path="/iPad" element={<IPad />} />
         <Route path="/airPods" element={<AirPods />} />
          <Route path="/product/:id" element={<Product />} />
-         <Route path="/admin/products" element={<Products />} />
+         <Route path="/admin/products" element={<Products/>} />
+         <Route path="/admin/users" element={<Users/>} />
          <Route path="/admin/products/edit/:id" element={<EditProduct />} />
          <Route path="/cart" element={<Cart />} />
 

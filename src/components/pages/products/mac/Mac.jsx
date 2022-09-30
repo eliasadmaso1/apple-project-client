@@ -13,9 +13,9 @@ const Mac = () => {
   const [load,setLoad] = useState(true);
 
   useEffect(() => {
-    const displayProducts = async () => {
-      const macs = await getAllProducts().then((res) => res.filter(item => item.category === "MacBook"));
-      setProducts(macs);
+    const displayProducts = async (category) => {
+      const currentProducts = await getAllProducts().then((res) => res.filter(product => product.category === category));
+      setProducts(currentProducts);
       setLoad(false);
     };
 
@@ -23,7 +23,7 @@ const Mac = () => {
       await getAllProducts().then(res => !res && setLoad(false));
     }
   productsFromServer();
-  displayProducts();
+  displayProducts("MacBook");
  
   }, []);
 

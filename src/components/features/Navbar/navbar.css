@@ -32,6 +32,12 @@ nav a:hover{
 
 }
 
+nav span{
+    margin: 0 2rem;
+    color: var(--txtColor);
+
+}
+
 nav .logOut{
     
     margin: 0 2rem;

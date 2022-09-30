@@ -10,26 +10,38 @@ import Box from '@mui/material/Box';
 
 
 const IPhone = () => {
-
-    const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [load,setLoad] = useState(true);
 
   useEffect(() => {
-    const displayProducts = async () => {
-      const iPhones = await getAllProducts().then((res) => res.filter(item => item.category === "iPhone"));
-      setProducts(iPhones);
+    const displayProducts = async (category) => {
+      const currentProducts = await getAllProducts().then((res) => res.filter(product => product.category === category));
+      setProducts(currentProducts);
+      setLoad(false);
     };
-    displayProducts();
+
+    const productsFromServer = async()=>{
+      await getAllProducts().then(res => !res && setLoad(false));
+    }
+  productsFromServer();
+  displayProducts("iPhone");
+ 
   }, []);
 
-    return (
-        <>
-        <div className="products-page">
-          <header className="iPhone">
-            <h1 className="header-title">iPhones</h1>
-            <img src={iPhone} alt="" className="img" />
-          </header>
-  
-          {products ?  <div className="products-container">
+  return (
+    <>
+      <div className="products-page">
+        <header className="iPhone">
+          <h1 className="header-title">iPhones</h1>
+          <img src={iPhone} alt="" className="img" />
+        </header>
+      {load === true ? <div className="loader-div"><Box sx={{ display: 'flex' }}>
+       
+<CircularProgress />
+    
+    
+</Box></div> : products.length === 0 ? <div className="not-loaded"><span>Server Error - </span>Products Not Loaded</div> :
+<div className="products-container">
           { products.map((product) => {
             return (
               <>
@@ -42,17 +54,17 @@ const IPhone = () => {
                 />
               </>
             );
-          }) 
+          })
        
         }
-        </div> : <div className="loader-div">
-<Box sx={{ display: 'flex' }}>
-<CircularProgress />
-</Box>
-</div> }
-        </div>
-      </>
-    )
+        </div> 
+      
+
+ }
+       
+      </div>
+    </>
+  );
 }
 
 export default IPhone

@@ -19,6 +19,9 @@ const Cart = () => {
     const [load,setLoad] = useState(true);
 
     useEffect(()=>{
+        const productsFromServer = async()=>{
+            await getCartProducts().then(res => !res && setLoad(false));
+          }
         const getUserProducts = async()=>{
             if(user){
                  getCartProducts(user._id).then(async(res)=>{
@@ -37,7 +40,7 @@ const Cart = () => {
                     });
                 }
             }
-     
+        productsFromServer();
         getUserProducts();
 
     },[user,toggle]);

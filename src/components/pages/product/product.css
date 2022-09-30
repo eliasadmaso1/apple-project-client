@@ -147,11 +147,11 @@
     
     .product-page-details{
           display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
           justify-content: space-around;
           height: 100%;
+          flex-direction: column;
       }
       .product-content{
 
