@@ -59,7 +59,7 @@ const Navbar = () => {
         {user ? <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">
         Cart
     </Badge></Link> : null}
-        {user ? <span>{`Hello, ${user.firstName}`}</span> : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
+        {user ? null : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
         {user ? <span className="logOut" onClick={logOut}>LogOut</span>: null}
  
 
