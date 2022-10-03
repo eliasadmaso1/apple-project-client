@@ -106,6 +106,8 @@
     .section-div{
         width: 100%;
         flex-direction: column;
+        margin-top: 10px;
+        padding: 5px;
     }
     .section-btn{
         width: 50%;

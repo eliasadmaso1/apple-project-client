@@ -4,6 +4,7 @@ import iPhone from "../../images/iphone.png";
 import mac from "../../images/mac3.png";
 import iPad from "../../images/ipads-back.png";
 import airPods2 from "../../images/airpods-back.png";
+import watches from '../../images/watch-back.png';
 import { Link } from "react-router-dom";
 import Header from "../../features/Header/Header";
 
@@ -134,7 +135,42 @@ const Home = () => {
             </Link>
           </button>
         </div>
+        
       </div>
+
+      <div className="home-section">
+        <h1 className="home-section-title">Apple Watches</h1>
+
+        <img src={watches} alt="" className="img" />
+        <div className="shop-link">
+          <h1>Choose Your Apple Watch</h1>
+          <div className="section-div">
+            <div className="section-div-item">
+              <img className="item-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQE23ref_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-alpine-ultra_VW_34FR_WF_CO?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660713657930%2C1660927566964%2C1660927563656"/>
+              <span className="item-title">Apple Watch Ultra</span>
+            </div>
+            <div className="section-div-item">
+              <img className="item-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MP853ref_VW_34FR+watch-45-stainless-gold-cell-8s_VW_34FR_WF_CO?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660780870708%2C1661890893034"/>
+              <span className="item-title">Apple Watch Series 8</span>
+            </div>
+            <div className="section-div-item">
+              <img className="item-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLG3_VW_34FR+watch-44-alum-midnight-nc-se_VW_34FR_WF_CO?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660780893022%2C1660759430380"/>
+              <span className="item-title">Apple Watch SE</span>
+            </div>
+            <div className="section-div-item">
+              <img className="item-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPKF3_VW_34FR+watch-41-stainless-silver-cell-hermes8s_VW_34FR_WF_CO+watch-face-41-hermes8s-complex-noirprint_VW_34FR_WF_CO?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660776584926%2C1663623201568%2C1660949557612"/>
+              <span className="item-title">Apple Watch Hermes</span>
+            </div>
+          </div>
+          <button className="section-btn">
+            <Link to="/airPods" className="link">
+              Shop
+            </Link>
+          </button>
+        </div>
+        
+      </div>
+
     </div>
     </>
   );

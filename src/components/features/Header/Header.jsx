@@ -4,6 +4,7 @@ import img1 from '../../images/mac-header.png';
 import img2 from '../../images/iphone-header.png';
 import img3 from '../../images/ipad-header.png';
 import img4 from '../../images/airpods-header.png';
+import img5 from '../../images/watch.png';
 import { useMyContext } from "../../context/context";
 
 
@@ -34,6 +35,11 @@ const Header = () => {
         <div className="item">
         <img src={img4} width="100"/>
         <h4>airpods</h4>
+        </div>
+
+        <div className="item">
+        <img src={img5} width="100"/>
+        <h4>Apple Watch</h4>
         </div>
   </div>
   <div>
