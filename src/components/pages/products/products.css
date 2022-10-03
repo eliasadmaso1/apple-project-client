@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-.products-page .mac{
+.products-page .dark{
     width: 100%;
     height: 100%;
     display: flex;
@@ -21,7 +21,7 @@
     color: white;
 }
 
-.products-page .iPhone{
+.products-page .light{
     width: 100%;
     height: 100%;
     display: flex;

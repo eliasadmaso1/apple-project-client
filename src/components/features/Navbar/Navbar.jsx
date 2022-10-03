@@ -8,7 +8,6 @@ import AppleIcon from "@mui/icons-material/Apple";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {useMyContext} from '../../context/context';
-import LogoutIcon from '@mui/icons-material/Logout';
 import Badge from '@mui/material/Badge';
 import {getCartProducts} from '../../service/cart';
 
@@ -54,6 +53,7 @@ const Navbar = () => {
         <Link to="/iPhone" onClick={handleChange}>iPhone</Link>
         <Link to="/iPad" onClick={handleChange}>iPad</Link>
         <Link to="/airPods" onClick={handleChange}>AirPods</Link>
+        <Link to="/watches" onClick={handleChange}>Watch</Link>
         {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
         {user?.isAdmin ? <Link to="/admin/users" onClick={handleChange}>Users</Link> : null}
         {user ? <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">

@@ -46,10 +46,9 @@ const Product = () => {
     return (
       product &&(<div className="product-container">
             <nav>{product.title}</nav>
-            {/* <h1 className="product-page-title">Choose your new {product.title}</h1> */}
             <div className="product-page-details">
                 <div className="product-content">
-                  <img src={product.gallery[3] ? product.gallery[3] : product.gallery[2] || product.gallery[1] } alt="product" className="product-img-description"/>
+                  <img src={product.gallery[0] ? product.gallery[0] : product.gallery[2] || product.gallery[1] } alt="product" className="product-img-description"/>
                 </div>
                 <div className="product-content">
                     <h1>{product.title}</h1>

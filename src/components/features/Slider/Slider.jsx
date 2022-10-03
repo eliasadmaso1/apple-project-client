@@ -6,7 +6,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './Slider.css';
-import { useMyContext } from '../../context/context';
 
 const Slider = ({data}) => {
 

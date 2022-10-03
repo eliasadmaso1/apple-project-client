@@ -1,4 +1,3 @@
-import { deleteUser, getAllUsers, updateUser } from '../../../service/users';
 import '../auth.css';
 import {userRegisteraion} from "../../../service/auth";
 import {useState} from 'react';
