@@ -49,7 +49,7 @@ const IPhone = () => {
                   img={product.gallery[0]}
                   title={`${product.title}`}
                   price={product.price}
-                  imgWidth="250px"
+                  imgWidth="210px"
                   productId={product._id}
                 />
               </>

@@ -9,6 +9,7 @@ import {useMyContext} from '../../context/context';
 import {Link} from 'react-router-dom';
 
 
+
 const Product = () => {
 
   const { id } = useParams();
@@ -26,8 +27,18 @@ const Product = () => {
     getProduct();
   }, []);
 
+  const showMessage = (str)=>{
+    setTimeout(()=>{
+      setMessage(str);
+    },500);
+    setTimeout(() => {
+      setMessage("");
+      
+    }, 3000);
+  }
+
   const toCart = async()=>{
-    await addToCart(product._id,user._id);
+    await addToCart(product._id,user._id).then(res => showMessage(res.data))
     changeToggle();
 
   }
@@ -50,6 +61,7 @@ const Product = () => {
                     <span className="details-item" style={{color:"green"}}>{product.status}</span>
                     <span className="details-item">{product.price}$</span>
                     {user ? <button className="product-page-btn" onClick={toCart}>Buy</button> :  <Link to="/registration"><button className="product-page-btn-registration">Register Here To Buy</button></Link>}
+                    <span className="message">{message}</span>
 
                 </div>
                 <div className="product-content">

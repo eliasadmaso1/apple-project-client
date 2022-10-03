@@ -37,6 +37,11 @@
 
 }
 
+.product-content .message{
+    margin-top: 10px;
+    color: green;
+}
+
 .product-img-description{
     width: 70%;
 }
