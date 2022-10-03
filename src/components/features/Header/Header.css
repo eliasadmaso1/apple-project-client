@@ -1,52 +1,29 @@
 .header-container{
     height: 8vh;
-    background-color:#333333;
+    background-color:#fff;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr; 
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     align-content: center;
+    justify-items: center;
+    margin: 50px;
 }
-
-.link{
-    color:white;
-    font-size: 13px;
+.products-images{
     display: flex;
     justify-content: center;
-    text-decoration: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.products-images .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
 }
 
 
-
-
-
-
-
-
-a{
-    text-decoration: none;
-}
-.nav{
-    width: 0px;
-}
-.media-link{
-    color: white;
-    height: 0px;
-  
-    
-}
-ul{
-    margin-right: 5px;
-}
-.menu-icon{
-    display: none;
-}
-li{
-    display: none;
-}
-.nav-container .logo{
-    display: none;
-}
 
 
 
@@ -56,50 +33,15 @@ li{
 (min-width: 428px) and (max-width: 767px),
 (min-width: 384px) and (max-width: 767px),
 (min-width: 360px) and (max-width: 767px) {
-    .link{
-        font-size: 10px;
-    }
     .header-container{
-        visibility: hidden;
-        width: 0px;
-        height: 0px;
+        height: 100%;
 
     }
-   
-    .nav{
-        width: 100%;
-        background-color:#1D1D1F;
-        height: 50px;
+    .products-images{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-    .nav .menu-icon{
-        color: #FFFFFF;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        
-    }
-    
-   
-    .nav-menu-active li{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        height: 100px;
-        background-color: #1D1D1F;
-        width: 100%;
-    }
-    
-   
-    .media-link{
-        color: white;
-    }
-    .nav-menu{
-        height: 0px;
-    }
-    .nav-menu li{
-        visibility: hidden;
+    .products-images .item{
     }
   
    

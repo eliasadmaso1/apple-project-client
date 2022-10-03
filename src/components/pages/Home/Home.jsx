@@ -5,29 +5,44 @@ import mac from "../../images/mac3.png";
 import iPad from "../../images/ipads-back.png";
 import airPods2 from "../../images/airpods-back.png";
 import { Link } from "react-router-dom";
+import Header from "../../features/Header/Header";
 
 
 const Home = () => {
-  const sliderData = [
-    {
-      text: "iPhons",
-    },
-    {
-      text: "MacBooks",
-    },
-    {
-      text: "iPads",
-    },
-    {
-      text: "airPods",
-    },
-    {
-      text: "Best Products",
-    },
-  ];
   return (
+    <>
+    <Header/>
     <div className="home-container">
-    
+            <div className="home-section">
+        <h1 className="home-section-title">MacBooks</h1>
+        <img src={mac} alt="" className="img" />
+        <div className="shop-link">
+          <h1>Choose Your Mac</h1>
+          <div className="section-div">
+            <div className="section-div-item">
+              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mba__h3jrdtzdcbm2_large_2x.png"/>
+              <span className="item-title">MacBook Air M1 chip</span>
+            </div>
+            <div className="section-div-item">
+              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mba_m2__e3tzj75hwnqu_large_2x.png"/>
+              <span className="item-title">MacBook Air M2 chip</span>
+            </div>
+            <div className="section-div-item">
+              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mbp_13__9j7gq7j09le6_large_2x.png"/>
+              <span className="item-title">MacBook Pro 13</span>
+            </div>
+            <div className="section-div-item">
+              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mbp_14_16__gb70k890dbe6_large_2x.png"/>
+              <span className="item-title">MacBook Pro 14 and 16</span>
+            </div>
+          </div>
+          <button className="section-btn">
+            <Link to="/mac" className="link">
+              Shop
+            </Link>
+          </button>
+        </div>
+      </div>
       <div className="home-section">
         <h1 className="home-section-title">iPhons</h1>
         <img src={iPhone} alt="" className="img" />
@@ -52,44 +67,12 @@ const Home = () => {
             </div>
           </div>
           <button className="section-btn">
-            <Link to="/" className="link">
+            <Link to="/iPhone" className="link">
               Shop
             </Link>
           </button>
         </div>
       </div>
-
-      <div className="home-section">
-        <h1 className="home-section-title">MacBooks</h1>
-        <img src={mac} alt="" className="img" />
-        <div className="shop-link">
-          <h1>Choose Your Mac</h1>
-          <div className="section-div">
-            <div className="section-div-item">
-              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mba__h3jrdtzdcbm2_large_2x.png"/>
-              <span className="item-title">MacBook Air M1 chip</span>
-            </div>
-            <div className="section-div-item">
-              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mba_m2__e3tzj75hwnqu_large_2x.png"/>
-              <span className="item-title">MacBook Air M2 chip</span>
-            </div>
-            <div className="section-div-item">
-              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mbp_13__9j7gq7j09le6_large_2x.png"/>
-              <span className="item-title">MacBook Pro 13</span>
-            </div>
-            <div className="section-div-item">
-              <img className="item-img" src="https://www.apple.com/v/macbook-air-m1/b/images/overview/compare/compare_mbp_14_16__gb70k890dbe6_large_2x.png"/>
-              <span className="item-title">MacBook Pro 14 and 16</span>
-            </div>
-          </div>
-          <button className="section-btn">
-            <Link to="/" className="link">
-              Shop
-            </Link>
-          </button>
-        </div>
-      </div>
-
       <div className="home-section">
         <h1 className="home-section-title">iPads</h1>
         <img src={iPad} alt="" className="img" />
@@ -114,7 +97,7 @@ const Home = () => {
             </div>
           </div>
           <button className="section-btn">
-            <Link to="/" className="link">
+            <Link to="/iPad" className="link">
               Shop
             </Link>
           </button>
@@ -146,13 +129,14 @@ const Home = () => {
             </div>
           </div>
           <button className="section-btn">
-            <Link to="/" className="link">
+            <Link to="/airPods" className="link">
               Shop
             </Link>
           </button>
         </div>
       </div>
     </div>
+    </>
   );
 };
 
