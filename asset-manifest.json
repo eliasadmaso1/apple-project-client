@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/apple-project-client/static/css/main.24c61f76.css",
-    "main.js": "/apple-project-client/static/js/main.2be07283.js",
+    "main.css": "/apple-project-client/static/css/main.f7407d38.css",
+    "main.js": "/apple-project-client/static/js/main.23c88afa.js",
     "static/js/787.68e0314b.chunk.js": "/apple-project-client/static/js/787.68e0314b.chunk.js",
     "static/media/ipads-back.png": "/apple-project-client/static/media/ipads-back.d13f2849baa8dd3ebb33.png",
     "static/media/watch-back.png": "/apple-project-client/static/media/watch-back.a9efee58ac09eff88480.png",
@@ -9,6 +9,7 @@
     "static/media/mac3.png": "/apple-project-client/static/media/mac3.d1eb1c24176a3a2872bc.png",
     "static/media/airPodsPro.png": "/apple-project-client/static/media/airPodsPro.6bec05b998437cbaf98c.png",
     "static/media/airpods-back.png": "/apple-project-client/static/media/airpods-back.8c8fee874f1b8938d5ac.png",
+    "static/media/macInbox.png": "/apple-project-client/static/media/macInbox.795c792329a9555a2123.png",
     "static/media/mac.png": "/apple-project-client/static/media/mac.99fcddad3fa7ce44746e.png",
     "static/media/ipad-header.png": "/apple-project-client/static/media/ipad-header.7a42ebf2542d1cc2e4a1.png",
     "static/media/watch.png": "/apple-project-client/static/media/watch.861d86b533b7ef9d8a74.png",
@@ -16,12 +17,12 @@
     "static/media/mac-header.png": "/apple-project-client/static/media/mac-header.0910d20e67c4c8660703.png",
     "static/media/airpods-header.png": "/apple-project-client/static/media/airpods-header.b80e5181432cc7067a01.png",
     "index.html": "/apple-project-client/index.html",
-    "main.24c61f76.css.map": "/apple-project-client/static/css/main.24c61f76.css.map",
-    "main.2be07283.js.map": "/apple-project-client/static/js/main.2be07283.js.map",
+    "main.f7407d38.css.map": "/apple-project-client/static/css/main.f7407d38.css.map",
+    "main.23c88afa.js.map": "/apple-project-client/static/js/main.23c88afa.js.map",
     "787.68e0314b.chunk.js.map": "/apple-project-client/static/js/787.68e0314b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24c61f76.css",
-    "static/js/main.2be07283.js"
+    "static/css/main.f7407d38.css",
+    "static/js/main.23c88afa.js"
   ]
 }
