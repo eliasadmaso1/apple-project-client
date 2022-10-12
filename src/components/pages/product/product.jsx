@@ -8,6 +8,10 @@ import { addToCart } from '../../service/cart';
 import {useMyContext} from '../../context/context';
 import {Link} from 'react-router-dom';
 import macInBox from '../../images/macInbox.png';
+import iphoneInBox from '../../images/iphoneInbox.png';
+import ipadInBox from '../../images/ipadInbox.png';
+import watchInBox from '../../images/watchInbox.png';
+
 
 
 
@@ -73,8 +77,12 @@ const Product = () => {
 
             </div>
             <div className="product-content">
-                <h4>What In Box ? </h4>
-                    {product.inBox = "mac" ? <img src={macInBox} className="inBoxImg"/> : "no"}
+                <h4 className="inBox-title">What In Box ? </h4>
+                    {product.inBox === "mac" ? <img src={macInBox} className="inBoxImg"/> :
+                     product.inBox === "iphone" ? <img src={iphoneInBox} className="inBoxImg"/> :
+                      product.inBox === "ipad" ? <img src={ipadInBox} className="inBoxImg"/> :
+                    product.inBox === "air" ? "airpods" :
+                     product.inBox === "watch" ? <img src={watchInBox} className="inBoxImg"/> : "none"}
                 </div>
         </div>)
     )
