@@ -1,5 +1,5 @@
 .product-container{
-    height: 100vh;
+    height: 100%;
     font-family: 'Open Sans', sans-serif;
 
 }
@@ -35,6 +35,10 @@
     height: 50vh;
     box-shadow: 0px 0px 15px -5px gray;
 
+}
+
+.inBoxImg{
+    width: 50%;
 }
 
 .product-content .message{
@@ -163,6 +167,11 @@
           width: 90%;
           margin:20px;
       }
+      .inBoxImg{
+        width: 100%;
+        padding: 20px;
+    }
+    
       .product-page-title{
           font-size: 20px;
       }

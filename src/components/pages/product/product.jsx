@@ -7,6 +7,7 @@ import {getAllProducts} from '../../service/products';
 import { addToCart } from '../../service/cart';
 import {useMyContext} from '../../context/context';
 import {Link} from 'react-router-dom';
+import macInBox from '../../images/macInbox.png';
 
 
 
@@ -66,9 +67,15 @@ const Product = () => {
                 <div className="product-content">
                     <Slider data={product.gallery}/>
                 </div>
+            
+
              
 
             </div>
+            <div className="product-content">
+                <h4>What In Box ? </h4>
+                    {product.inBox = "mac" ? <img src={macInBox} className="inBoxImg"/> : "no"}
+                </div>
         </div>)
     )
 }
