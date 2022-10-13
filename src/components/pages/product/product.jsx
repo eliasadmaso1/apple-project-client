@@ -81,7 +81,7 @@ const Product = () => {
                     {product.inBox === "mac" ? <img src={macInBox} className="inBoxImg"/> :
                      product.inBox === "iphone" ? <img src={iphoneInBox} className="inBoxImg"/> :
                       product.inBox === "ipad" ? <img src={ipadInBox} className="inBoxImg"/> :
-                    product.inBox === "air" ? "airpods" :
+                    product.inBox === "air" ? "airpods1" :
                      product.inBox === "watch" ? <img src={watchInBox} className="inBoxImg"/> : "none"}
                 </div>
         </div>)
