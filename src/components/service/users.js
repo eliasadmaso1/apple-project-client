@@ -1,8 +1,10 @@
 import axios from "axios";
+import {baseUrl} from './utils';
+
 
 const getAllUsers = async () => {
   try {
-    const res = await axios.get(`http://localhost:5000/users`);
+    const res = await axios.get(`${baseUrl}/users`);
     return res.data;
 
   } catch (error) {
@@ -11,7 +13,7 @@ const getAllUsers = async () => {
 };
 const deleteUser = async(id) => {
   try {
-    const res = await axios.delete(`http://localhost:5000/users/${id}`);
+    const res = await axios.delete(`${baseUrl}/users/${id}`);
     console.log(res);
     return res;
   } catch (error) {
@@ -20,7 +22,7 @@ const deleteUser = async(id) => {
 };
 const updateUser = async(id,update) => {
   try {
-    const res = await axios.put(`http://localhost:5000/users/${id}`,update);
+    const res = await axios.put(`${baseUrl}/users/${id}`,update);
     console.log(res);
     return res;
   } catch (error) {

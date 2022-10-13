@@ -74,6 +74,7 @@
 
 .responsive-img{
     visibility: hidden;
+    height: 0px;
 
 
 

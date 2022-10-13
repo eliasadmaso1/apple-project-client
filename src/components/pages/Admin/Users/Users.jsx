@@ -38,7 +38,7 @@ function Users() {
             <h5>Manage</h5>
           </div>
     
-          {users.map((user,i) => {
+          {users ? users.map((user,i) => {
             return (
               <div className="table-row-users" key={i}>
                 <h5>{user._id.slice(0,10)}</h5>
@@ -58,13 +58,13 @@ function Users() {
                 </h5>
               </div>
             );
-          })}
+          }) : <div>users not found</div>}
         </div>
     
     
         <div className="display-products-responsive">
           <div className="responsive-container">
-            {users.map((user)=>{
+            {users ? users.map((user)=>{
               return(
                 <div className="responsive-item">
                 <h5 className="responsive-title">{user._id.slice(0,10)}</h5>
@@ -76,7 +76,7 @@ function Users() {
                 </div>
               </div>
               )
-            })}
+            }) : <div> users not found</div>}
          
           </div>
         </div>
