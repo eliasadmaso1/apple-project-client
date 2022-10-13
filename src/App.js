@@ -18,7 +18,6 @@ import {ContextProvider} from './components/context/context';
 import { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
 import Users from "./components/pages/Admin/Users/Users";
-import Watch from "./components/pages/products/watch/Watch";
 import ProductsComponent from "./components/pages/products/component/ProductsComponent";
 import mac from './components/images/mac.png';
 import iphone from './components/images/iphone.png';
@@ -65,10 +64,10 @@ function App() {
         <Route path="/airPods" element={<AirPods />} />
         <Route path="/watches" element={<Watch />} /> */}
         <Route path="/mac" element={<ProductsComponent categoryProp={"MacBook"} pageBackground={"dark"} cardImgWidth={"250px"} headerImg={mac} pageTitle={"MacBook"} />} />
-        <Route path="/iPhone" element={<ProductsComponent categoryProp={"iPhone"} pageBackground={"light"} cardImgWidth={"250px"} headerImg={iphone} pageTitle={"IPhones"} />} />
-        <Route path="/iPad" element={<ProductsComponent categoryProp={"iPads"} pageBackground={"light"} cardImgWidth={"250px"} headerImg={ipad} pageTitle={"IPads"} />} />
-        <Route path="/airPods" element={<ProductsComponent categoryProp={"airPods"} pageBackground={"light"} cardImgWidth={"250px"} headerImg={airPods} pageTitle={"AirPods"} />} />
-        <Route path="/watches" element={<ProductsComponent categoryProp={"Watches"} pageBackground={"light"} cardImgWidth={"250px"} headerImg={watch} pageTitle={"Apple Watches"} />} />
+        <Route path="/iPhone" element={<ProductsComponent categoryProp={"iPhone"} pageBackground={"light"} cardImgWidth={"220px"} headerImg={iphone} pageTitle={"IPhones"} />} />
+        <Route path="/iPad" element={<ProductsComponent categoryProp={"iPads"} pageBackground={"light"} cardImgWidth={"220px"} headerImg={ipad} pageTitle={"IPads"} />} />
+        <Route path="/airPods" element={<ProductsComponent categoryProp={"airPods"} pageBackground={"light"} cardImgWidth={"220px"} headerImg={airPods} pageTitle={"AirPods"} />} />
+        <Route path="/watches" element={<ProductsComponent categoryProp={"Watches"} pageBackground={"light"} cardImgWidth={"220px"} headerImg={watch} pageTitle={"Apple Watches"} />} />
 
          <Route path="/product/:id" element={<Product />} />
          <Route path="/admin/products" element={<Products/>} />

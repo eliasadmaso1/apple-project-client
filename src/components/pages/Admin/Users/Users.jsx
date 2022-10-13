@@ -48,7 +48,7 @@ function Users() {
                 <h5>{user.userName}</h5>
                 <h5>{user.email}</h5>
                 <h5>{user.isAdmin ? <span style={{color:"green"}}>Admin</span> : <span style={{color:"red"}}>Not Admin</span>}</h5>
-                <h5>{user.createdAt.slice(0,10)}</h5>
+                <h5>{user.createdAt.slice(0,10).split('-').reverse().join('/')}</h5>
                 <h5>
                   <button className="table-btn" onClick={async()=>{
                       await deleteUser(user._id);
@@ -67,9 +67,11 @@ function Users() {
             {users ? users.map((user)=>{
               return(
                 <div className="responsive-item">
-                <h5 className="responsive-title">{user._id.slice(0,10)}</h5>
-                <h5><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="90"/></h5>
-                <h5 className="responsive-title">{user.email}</h5>
+                <h5 className="responsive-title">ID - {user._id.slice(0,10)}</h5>
+                <h5 className="responsive-title">Created At - {user.createdAt.slice(0,10).split('-').reverse().join('/')}</h5>
+
+                <h5><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" className="responsive-img"/></h5>
+                <h5 className="responsive-title">Email - {user.email}</h5>
                 <h5>{user.isAdmin ? <span style={{color:"green"}}>Admin</span> : <span style={{color:"red"}}>Not Admin</span>}</h5>
                 <div className="responsive-buttons">
                   <button className="table-btn-responsive">delete</button>      

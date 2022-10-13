@@ -177,7 +177,6 @@
     justify-content: space-around;
     width: 85%;
     height: 100%;
-    padding: 20px;
     box-shadow: 0px 0px 15px -5px white;
     background-color: white;
     border-radius: 5px;
@@ -198,9 +197,9 @@
 }
 
 .responsive-img{
-    width: 150px;
+    width: 100px;
     visibility: visible;
-    height: 150px;
+    height: 100px;
 
 
 
@@ -213,7 +212,7 @@
     padding: 20px;
     visibility: visible;
     width: 100%;
-
+    margin-top: 10px;
 
     
 }
@@ -225,7 +224,6 @@
     background-color:#333333;
     color: white;
     cursor: pointer;
-    margin:20px;
     font-weight: bold;
 
 }
