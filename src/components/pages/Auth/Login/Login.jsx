@@ -38,7 +38,7 @@ const Login = () => {
         <form className="form">
             <h3 className="form-title">Login Here</h3>
             <input placeholder="Email" name="email" onChange={handleChange}/>
-            <input placeholder="Password" name="password" onChange={handleChange}/>
+            <input placeholder="Password" name="password" onChange={handleChange} type="password"/>
             <button className="form-btn" onClick={loginUser}>Submit</button>
             {error && <div style={{ color: "red", fontSize: 13.5 }}>{error}</div>}
             <span style={{color:"white"}}>Not registered yet?</span>

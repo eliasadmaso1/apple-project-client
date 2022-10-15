@@ -70,9 +70,9 @@ const Registration = () => {
                 <input placeholder="Last Name" name="lastName" onChange={handleChange}/>
                 <input placeholder="User Name" name="userName" onChange={handleChange}/>
                 <span>{formErrors.userName}</span>
-                <input placeholder="Email" name="email" onChange={handleChange}/>
+                <input placeholder="Email" name="email" onChange={handleChange} type="email"/>
                 <span>{formErrors.email}</span>
-                <input placeholder="Password" name="password" onChange={handleChange}/>
+                <input placeholder="Password" name="password" onChange={handleChange} type="password"/>
                 <span>{formErrors.password}</span>
                 <span>Already registered? <Link to="/login" style={{color:"white",textDecoration:"none"}}>Click Here</Link></span>
                 <button className="form-btn" onClick={register}>Submit</button>

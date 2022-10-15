@@ -11,6 +11,8 @@ import macInBox from '../../images/macInbox.png';
 import iphoneInBox from '../../images/iphoneInbox.png';
 import ipadInBox from '../../images/ipadInbox.png';
 import watchInBox from '../../images/watchInbox.png';
+import airInBox from '../../images/airInbox.png';
+
 
 
 
@@ -81,7 +83,7 @@ const Product = () => {
                     {product.inBox === "mac" ? <img src={macInBox} className="inBoxImg"/> :
                      product.inBox === "iphone" ? <img src={iphoneInBox} className="inBoxImg"/> :
                       product.inBox === "ipad" ? <img src={ipadInBox} className="inBoxImg"/> :
-                    product.inBox === "air" ? "airpods1" :
+                    product.inBox === "air" ? <img src={airInBox} className="inBoxImg"/> :
                      product.inBox === "watch" ? <img src={watchInBox} className="inBoxImg"/> : "none"}
                 </div>
         </div>)

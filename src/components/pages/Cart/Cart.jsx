@@ -14,9 +14,17 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
 
     const { user, changeToggle, toggle } = useMyContext();
+    const [modal, setModal] = useState(false);
+    const [productId,setProductId] = useState(null);
 
     const [products,setProducts] = useState([]);
     const [load,setLoad] = useState(true);
+
+    const getIdForModal = async(productId)=>{
+        setProductId(productId);
+
+    };
+
 
     useEffect(()=>{
         const productsFromServer = async()=>{
@@ -61,13 +69,13 @@ const Cart = () => {
  
 
     return (
-        <div className="cart-container">
+        <><div className="cart-container">
             {load === true ?  <Box sx={{ display: 'flex' }}>
       <CircularProgress />
     </Box>
     : products.length === 0 ?     <div style={{fontWeight:"bold"}}>There is no products in your cart</div>
-   : <div className="cart-table">
-             <div className="cart-tr-th">
+   : <><div className={`${modal ? "modal-on" : "cart-table"}`}>
+             <div className={modal ? "modal-on" : "cart-tr-th"}>
              <span className="th">Product</span>
                  <span className="th">Quantity</span>
                  <span className="th">Remove</span>
@@ -76,7 +84,7 @@ const Cart = () => {
              </div>
              {products.map((item)=>{
                  return(
-                    <div className="cart-tr">
+                    <div className={modal ? "modal-on" : "cart-tr"}>
                     <div className="td"><h3>{item.title}</h3><img src={item.gallery[0]} width="100"/></div>
                     <div className="td">
                         <div className="quantity-btns">
@@ -96,8 +104,10 @@ const Cart = () => {
                     </div>
                     <div className="td">
                         <button className="cart-btn" onClick={async()=>{
-                            await deleteProduct(item._id,user._id);
-                            changeToggle();
+                          getIdForModal(item._id)
+                          setModal(true)
+                    
+                  
 
                         }}><DeleteIcon/></button>
    
@@ -117,10 +127,33 @@ const Cart = () => {
 
           </div>
 
-         </div> }
+         </div>
+         <div className={modal ? "modal-container" : "modal-off"}>
+             <div className={modal ? "modal" : "modal-off"}>
+                 <h3>Are you sure to delete the product from your cart?</h3>
+                 <div className="modal-buttons">
+                 <button className="modal-button-ok" onClick={async()=>{
+                    await deleteProduct(productId,user._id)
+                    changeToggle();
+                     setTimeout(()=>{
+                        setModal(false)
+                     },2000) 
+                 
+                 }}>Yes</button>
+                      <button className="modal-button" onClick={()=>{
+                     setModal(false)
+                 }}>No</button>
+                 </div>
+             
+
+             </div>
+          
+         </div>
+         </> }
       
             
         </div>
+         </>
     )
 }
 

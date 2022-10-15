@@ -43,7 +43,7 @@ const Header = () => {
         </div>
   </div>
   <div>
-          <span className="welcome">Welcome, {user?.firstName}</span>
+          <span className="welcome">{user ? `welcome ${user.firstName}` : null}</span>
         </div>
 
     
