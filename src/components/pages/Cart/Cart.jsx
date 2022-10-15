@@ -128,8 +128,8 @@ const Cart = () => {
           </div>
 
          </div>
-         <div className={modal ? "modal-container" : "modal-off"}>
-             <div className={modal ? "modal" : "modal-off"}>
+         {modal ? <div className="modal-container">
+             <div className="modal">
                  <h3>Are you sure to delete the product from your cart?</h3>
                  <div className="modal-buttons">
                  <button className="modal-button-ok" onClick={async()=>{
@@ -148,7 +148,7 @@ const Cart = () => {
 
              </div>
           
-         </div>
+         </div> : null}
          </> }
       
             
