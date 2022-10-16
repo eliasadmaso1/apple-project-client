@@ -18,6 +18,7 @@ const Navbar = () => {
 
   const { user,changeToggle,toggle} = useMyContext();
   const [products,setProducts] = useState([]);
+  const [modal,setModal] = useState(false);
 
   useEffect(()=>{
     const lengthOfCartProducts = async()=>{
@@ -44,35 +45,52 @@ const Navbar = () => {
   }
 
   return (
-    <header>
-      <AppleIcon style={{ fontSize: "25px" }}/>
+   <>{modal ?  <div className="modal-container">
+   <div className="modal">
+       <h3>Dont want to watch more products?</h3>
+       <div className="modal-buttons">
+       <button className="modal-button-ok" onClick={async()=>{
+           setTimeout(()=>{
+             logOut()
+            setModal(false)
+           },2000) 
+       
+       }}>Log-Out</button>
+            <button className="modal-button" onClick={()=>{
+           setModal(false)
+       }}>Stay</button>
+       </div>
+   
 
-      <nav ref={navRef}>
-        <Link to="/apple-project-client" onClick={handleChange}>Home</Link>
-        <Link to="/mac" onClick={handleChange}>Mac</Link>
-        <Link to="/iPhone" onClick={handleChange}>iPhone</Link>
-        <Link to="/iPad" onClick={handleChange}>iPad</Link>
-        <Link to="/airPods" onClick={handleChange}>AirPods</Link>
-        <Link to="/watches" onClick={handleChange}>Watch</Link>
-        {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
-        {user?.isAdmin ? <Link to="/admin/users" onClick={handleChange}>Users</Link> : null}
-        {user ? <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">
-        Cart
-    </Badge></Link> : null}
-        {user ? null : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
-        {user ? <span className="logOut" onClick={logOut}>LogOut</span>: null}
- 
+   </div>
 
-
-
-        <button onClick={handleChange} className="nav-btn nav-close-btn">
-          <CloseIcon style={{fontSize:"25px"}}/>
-        </button>
-      </nav>
-      <button onClick={handleChange} className="nav-btn">
-        <MenuIcon style={{fontSize:"25px"}}/>
-      </button>
-    </header>
+</div> : <header>
+       <AppleIcon style={{ fontSize: "25px" }}/>
+       <nav ref={navRef}>
+  <Link to="/apple-project-client" onClick={handleChange}>Home</Link>
+  <Link to="/mac" onClick={handleChange}>Mac</Link>
+  <Link to="/iPhone" onClick={handleChange}>iPhone</Link>
+  <Link to="/iPad" onClick={handleChange}>iPad</Link>
+  <Link to="/airPods" onClick={handleChange}>AirPods</Link>
+  <Link to="/watches" onClick={handleChange}>Watch</Link>
+  {user?.isAdmin ? <Link to="/admin/products" onClick={handleChange}>Products</Link> : null}
+  {user?.isAdmin ? <Link to="/admin/users" onClick={handleChange}>Users</Link> : null}
+  {user ? <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">
+  Cart
+</Badge></Link> : null}
+  {user ? null : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
+  {user ? <span className="logOut" onClick={()=>{
+    setModal(true)
+  }}>LogOut</span>: null}
+  <button onClick={handleChange} className="nav-btn nav-close-btn">
+    <CloseIcon style={{fontSize:"25px"}}/>
+  </button>
+</nav>
+<button onClick={handleChange} className="nav-btn">
+  <MenuIcon style={{fontSize:"25px"}}/>
+</button>
+    
+    </header>}</>
   );
 };
 
