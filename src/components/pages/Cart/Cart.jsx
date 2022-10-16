@@ -22,7 +22,6 @@ const Cart = () => {
 
     const getIdForModal = async(productId)=>{
         setProductId(productId);
-
     };
 
 

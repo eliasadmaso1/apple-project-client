@@ -9,6 +9,16 @@ const getAllProducts = async () => {
     console.log(error);
   }
 };
+
+const getProductById = async(id)=>{
+  try {
+    const res = await axios.get(`${baseUrl}/product/${id}`);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+
+}
+}
 const deleteProduct = async (id) => {
   try {
     const res = await axios.delete(`${baseUrl}/product/${id}`);
@@ -41,4 +51,5 @@ const addProduct = async (body) => {
 
 
 
-export { getAllProducts, addProduct, deleteProduct, updateProduct };
+
+export { getAllProducts,getProductById, addProduct, deleteProduct, updateProduct }
