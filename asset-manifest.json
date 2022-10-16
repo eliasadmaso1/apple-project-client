@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/apple-project-client/static/css/main.e5de112f.css",
-    "main.js": "/apple-project-client/static/js/main.00372032.js",
+    "main.css": "/apple-project-client/static/css/main.1127a73c.css",
+    "main.js": "/apple-project-client/static/js/main.8fcd02c1.js",
     "static/js/787.68e0314b.chunk.js": "/apple-project-client/static/js/787.68e0314b.chunk.js",
     "static/media/ipads-back.png": "/apple-project-client/static/media/ipads-back.d13f2849baa8dd3ebb33.png",
     "static/media/watch-back.png": "/apple-project-client/static/media/watch-back.a9efee58ac09eff88480.png",
@@ -21,12 +21,12 @@
     "static/media/airInbox.png": "/apple-project-client/static/media/airInbox.c4489abe5e87d088ee01.png",
     "static/media/airpods-header.png": "/apple-project-client/static/media/airpods-header.b80e5181432cc7067a01.png",
     "index.html": "/apple-project-client/index.html",
-    "main.e5de112f.css.map": "/apple-project-client/static/css/main.e5de112f.css.map",
-    "main.00372032.js.map": "/apple-project-client/static/js/main.00372032.js.map",
+    "main.1127a73c.css.map": "/apple-project-client/static/css/main.1127a73c.css.map",
+    "main.8fcd02c1.js.map": "/apple-project-client/static/js/main.8fcd02c1.js.map",
     "787.68e0314b.chunk.js.map": "/apple-project-client/static/js/787.68e0314b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5de112f.css",
-    "static/js/main.00372032.js"
+    "static/css/main.1127a73c.css",
+    "static/js/main.8fcd02c1.js"
   ]
 }
