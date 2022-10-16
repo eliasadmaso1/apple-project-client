@@ -8,6 +8,8 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [toggle,setToggle] = useState(true);
+  const [modal,setModal] = useState(false);
+  const [productId,setProductId] = useState(null);
 
   useEffect(() => {
     const initCartProducts = async() =>{
@@ -41,32 +43,7 @@ const Products = () => {
     
 };
 
-
-
-
-
- 
-
-
- 
-
-  
-
- 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  return (
+return (
     <>
     <div className="products-table">
       <div className="table-header">
@@ -81,7 +58,7 @@ const Products = () => {
 
       {products.map((product,i) => {
         return (
-          <div className="table-row" key={i}>
+          <div className={modal ? "modal-on" : "table-row"} key={i}>
             <h5>{product._id}</h5>
             <h5>
               <img src={product.gallery[0]} className="table-product-img" />
@@ -93,12 +70,36 @@ const Products = () => {
               getProductOrders(product._id)
            }</h5>
             <h5>
-              <button className="table-btn" onClick={()=> deleteItem(product._id)}>Delete</button>
+              <button className="table-btn" onClick={()=> {
+                setProductId(product._id);
+                setModal(true)
+                }}>Delete</button>
               <Link to={`/admin/products/edit/${product._id}`}><button className="table-btn">Edit</button></Link>
             </h5>
           </div>
         );
       })}
+          {modal ? <div className="modal-container">
+             <div className="modal">
+                 <h3>Are you sure to delete this Product?</h3>
+                 <div className="modal-buttons">
+                 <button className="modal-button-ok" onClick={async()=>{
+                    deleteItem(productId);
+                     setTimeout(()=>{
+                        setModal(false)
+                     },2000) 
+                 
+                 }}>Yes</button>
+                      <button className="modal-button" onClick={()=>{
+                     setModal(false)
+                 }}>No</button>
+                 </div>
+             
+
+             </div>
+          
+         </div> : null}
+
     </div>
 
 
