@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "../Slider/Slider";
 import "./modal.css";
 
-const Modal = ({ product,cancelModal, }) => {
+const Modal = ({ product,cancelModal }) => {
 
    
   return (

@@ -4,11 +4,7 @@
 
     
 }
-.modal-open{
-    visibility: hidden;
-    width: 0px;
-    height: 0px;
-}
+
 .table-header-users{
     display: grid;
     grid-template-columns: repeat(9,1fr);

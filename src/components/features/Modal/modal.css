@@ -5,7 +5,7 @@
 }
 
 .product-modal-container{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -70,3 +70,40 @@
 .modal-btn:hover{
     opacity: 0.5;
 }
+
+@media only screen and (min-width: 414px) and (max-width: 767px),
+  (min-width: 412px) and (max-width: 767px),
+  (min-width: 390px) and (max-width: 767px),
+  (min-width: 428px) and (max-width: 767px),
+  (min-width: 384px) and (max-width: 767px),
+  (min-width: 360px) and (max-width: 767px) {
+      .product-modal-container{
+          height: 100%
+
+      }
+      .product-modal{
+          width: 90%;
+          height: 100%;
+          margin: 30px;
+
+      }
+      .modal-details{
+          width: 30%;
+          height: 100%;
+          flex-direction: column;
+          font-size: 12px;
+      }
+      .modal-sideBar{
+          width: 70%;
+          height: 40%;
+          flex-direction: column;
+      }
+      .modal-btn{
+          margin-top: 0px;
+
+      }
+      .modal-title{
+          font-size: 12px;
+      }
+    
+  }
