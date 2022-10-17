@@ -134,6 +134,9 @@
     }
     .item-img{
     }
+    .modal-open{
+        visibility: hidden;
+    }
 
     
   }
