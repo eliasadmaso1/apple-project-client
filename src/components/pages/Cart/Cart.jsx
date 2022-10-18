@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const { user, changeToggle, toggle } = useMyContext();
+    const { user, changeToggle, toggle,contextModal } = useMyContext();
     const [modal, setModal] = useState(false);
     const [productId,setProductId] = useState(null);
 
@@ -73,7 +73,7 @@ const Cart = () => {
       <CircularProgress />
     </Box>
     : products.length === 0 ?     <div style={{fontWeight:"bold"}}>There is no products in your cart</div>
-   : <><div className={`${modal ? "modal-on" : "cart-table"}`}>
+   : <><div className={`${modal || contextModal ? "modal-on" : "cart-table"}`}>
              <div className={modal ? "modal-on" : "cart-tr-th"}>
              <span className="th">Product</span>
                  <span className="th">Quantity</span>

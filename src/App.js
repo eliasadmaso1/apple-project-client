@@ -25,6 +25,7 @@ function App() {
 
   const [user,setUser] = useState();
   const [toggle,setToggle] = useState(true);
+  const [contextModal,setContextModal] = useState(false);
 
   const changeToggle = ()=>{
     setToggle(prev => !prev);
@@ -39,7 +40,7 @@ function App() {
   },[]);
   
   return (
-    <ContextProvider value={{ user, toggle, changeToggle}}>
+    <ContextProvider value={{ user, toggle, changeToggle, contextModal,setContextModal}}>
     <BrowserRouter>
       <Navbar/>
       <Routes>

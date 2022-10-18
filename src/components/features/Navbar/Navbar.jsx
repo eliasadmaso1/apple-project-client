@@ -6,19 +6,45 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useRef } from "react";
 import AppleIcon from "@mui/icons-material/Apple";
 import PersonIcon from "@mui/icons-material/Person";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {useMyContext} from '../../context/context';
 import Badge from '@mui/material/Badge';
 import {getCartProducts} from '../../service/cart';
-
-
-
+import {useNavigate} from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {
 
-  const { user,changeToggle,toggle} = useMyContext();
+  const { user,changeToggle,toggle,contextModal,setContextModal} = useMyContext();
   const [products,setProducts] = useState([]);
-  const [modal,setModal] = useState(false);
+  const [filter,setFilter] = useState("");
+  const [toggleSearch,setToggleSearch] = useState(false);
+
+
+
+  const navigate = useNavigate();
+
+  const handleSearch = ()=>{
+    setToggleSearch(prev => !prev)
+    if(filter.toLowerCase().includes("macbook")){
+      navigate(`/mac`)
+    }
+    if(filter.toLowerCase().includes("iphone")){
+      navigate(`/iPhone`)
+    }
+    if(filter.toLowerCase().includes("ipad")){
+      navigate(`/iPad`)
+    }
+    if(filter.toLowerCase().includes("airpods")){
+      navigate(`/airPods`)
+    }
+    if(filter.toLowerCase().includes("watch")){
+      navigate(`/watches`)
+    }
+   
+
+
+
+  }
 
   useEffect(()=>{
     const lengthOfCartProducts = async()=>{
@@ -45,19 +71,19 @@ const Navbar = () => {
   }
 
   return (
-   <>{modal ?  <div className="modal-container">
+   <>{contextModal ?  <div className="modal-container">
    <div className="modal">
        <h3>Dont want to watch more products?</h3>
        <div className="modal-buttons">
        <button className="modal-button-ok" onClick={async()=>{
            setTimeout(()=>{
              logOut()
-            setModal(false)
+            setContextModal(false)
            },2000) 
        
        }}>Log-Out</button>
             <button className="modal-button" onClick={()=>{
-           setModal(false)
+           setContextModal(false)
        }}>Stay</button>
        </div>
    
@@ -80,16 +106,23 @@ const Navbar = () => {
 </Badge></Link> : null}
   {user ? null : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
   {user ? <span className="logOut" onClick={()=>{
-    setModal(true)
+    setContextModal(true)
   }}>LogOut</span>: null}
   <button onClick={handleChange} className="nav-btn nav-close-btn">
     <CloseIcon style={{fontSize:"25px"}}/>
   </button>
 </nav>
+
+<div className="search-container">
+
+  <input type="text" onChange={(e)=>{
+    setFilter(e.target.value)
+  }} className="search-input"/>
+  <button className="search-input-button" onClick={handleSearch}><SearchIcon style={{fontSize:"20px"}}/></button>
+</div>
 <button onClick={handleChange} className="nav-btn">
   <MenuIcon style={{fontSize:"25px"}}/>
 </button>
-    
     </header>}</>
   );
 };

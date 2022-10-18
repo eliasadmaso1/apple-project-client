@@ -60,6 +60,39 @@ header .nav-btn{
     opacity: 0;
 }
 
+
+.search-input{
+    width: 70%;
+    height: 20px;
+    border: solid 1px var(--txtColor);
+    padding: 10px;
+}
+.search-input:focus{
+    outline: none;
+}
+.search-input-button{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border: solid 1px var(--txtColor);
+    transition: 1s;
+    cursor: pointer;
+    padding: 10px;
+}
+.search-input-button:hover{
+    border: solid 1px var(--mainColor);
+
+
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (min-width: 414px) and (max-width: 767px),
 (min-width: 412px) and (max-width: 767px),
 (min-width: 390px) and (max-width: 767px),
