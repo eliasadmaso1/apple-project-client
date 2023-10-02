@@ -6,19 +6,42 @@
 }
 
 :root{
-    --mainColor:#333333;
+    --mainColor:#272323;
     --txtColor:#eee;
     --secondaryColor:#1D1D1F;
 }
 
 header{
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
-    height: 80px;
+    grid-template-columns: 1fr 2fr 0fr 1fr;
+    height: 60px;
     padding: 0 2rem;
     background-color: var(--mainColor);
     color: var(--txtColor);
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+header .nav-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .nav-div .nav-img{
+    font-size: 20px;
+}
+
+header a{
+    color: white;
 }
 
 nav a{
@@ -50,7 +73,6 @@ nav .logOut:hover{
 }
 
 header .nav-btn{
-    padding: 5px;
     cursor: pointer;
     background: transparent;
     border: none;
@@ -58,6 +80,7 @@ header .nav-btn{
     color: var(--txtColor);
     visibility: hidden;
     opacity: 0;
+    width: 0px;
 }
 
 

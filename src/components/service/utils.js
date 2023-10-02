@@ -1,3 +1,3 @@
 export const baseUrl = 
-"https://apple-project-server.herokuapp.com"
+"https://apple-store-v92s.onrender.com"
 // "http://localhost:5000"

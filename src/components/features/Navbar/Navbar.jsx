@@ -91,7 +91,7 @@ const Navbar = () => {
    </div>
 
 </div> : <header>
-       <AppleIcon style={{ fontSize: "25px" }}/>
+       <div className="nav-div"><AppleIcon className="nav-img"/></div>
        <nav ref={navRef}>
   <Link to="/apple-project-client" onClick={handleChange}>Home</Link>
   <Link to="/mac" onClick={handleChange}>Mac</Link>
@@ -104,25 +104,17 @@ const Navbar = () => {
   {user ? <Link to="/cart" onClick={handleChange}>  <Badge badgeContent={products && products.length} color="primary">
   Cart
 </Badge></Link> : null}
-  {user ? null : <Link to="/login" onClick={handleChange}><PersonIcon/></Link>}
-  {user ? <span className="logOut" onClick={()=>{
-    setContextModal(true)
-  }}>LogOut</span>: null}
   <button onClick={handleChange} className="nav-btn nav-close-btn">
     <CloseIcon style={{fontSize:"25px"}}/>
   </button>
 </nav>
-
-<div className="search-container">
-
-  <input type="text" onChange={(e)=>{
-    setFilter(e.target.value)
-  }} className="search-input"/>
-  <button className="search-input-button" onClick={handleSearch}><SearchIcon style={{fontSize:"20px"}}/></button>
-</div>
 <button onClick={handleChange} className="nav-btn">
   <MenuIcon style={{fontSize:"25px"}}/>
 </button>
+{user ? null : <div className="nav-div"><Link to="/login" onClick={handleChange}><PersonIcon className="nav-img"/></Link></div>}
+  {user ? <span className="logOut" onClick={()=>{
+    setContextModal(true)
+  }}>LogOut</span>: null}
     </header>}</>
   );
 };
