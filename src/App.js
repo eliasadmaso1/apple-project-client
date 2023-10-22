@@ -58,6 +58,7 @@ function App() {
          <Route path="/admin/products/edit/:id" element={<EditProduct />} />
          <Route path="/cart" element={<Cart />} />
          </Routes>
+         <h1>dfdfdf</h1>
       <Footer />
     </BrowserRouter>
     </ContextProvider>
